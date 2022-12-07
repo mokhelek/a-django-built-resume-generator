@@ -1,0 +1,223 @@
+<head>
+	{% load skill_tag %}
+	<style>
+		@page{
+		
+			margin: 1cm;
+		}
+	    @font-face {
+            font-family: "poppins";
+            src: url('../static/fonts/poppins/Poppins-Light.otf');
+        }
+        p{
+            font-family:poppins;
+        }
+		h1, h2, h3, h4, h5, h6 {
+			font-family:poppins;
+			
+		}
+
+
+
+		
+	</style>
+</head>
+
+
+<table>
+	<tr>
+		<td style="width:47%">
+			<h1 style="margin-bottom: -0.3cm;font-size: 3rem;color: rgb(73, 100, 255); font-weight: 600;" >  {{profile.first_name}}  {{profile.last_name}} </h1> 
+			<h3 style="color:rgb(80, 81, 109);font-size: 1.4rem;margin-top: -0.2cm;margin-bottom: -0.2cm">{{profile.job_title}}  </h3>
+			<br>
+			<br>
+		</td>
+		<td style="width:90%;padding-left: 3cm;">
+			
+			
+			{% if profile.github_link  %}
+	
+	
+				<a style="text-decoration: none;color:rgb(40, 40, 40)" href="{{profile.github_link}}">
+					<h3 style="margin-bottom: 0cm;margin-top:-0.14cm;font-size: 1rem"> <img  height="12" width="12" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\github.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.github_link }}</span></h3>
+
+				</a>
+		
+			
+			{% endif %}
+	
+			{% if profile.linkedin_link  %}
+		
+			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.linkedin_link}}">
+				<h3 style="margin-bottom: 0cm;margin-top:-0.14cm;font-size: 1rem"> <img height="12" width="12" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\linkedin.svg" alt="">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.linkedin_link }}</span></h3>
+
+			</a>
+	
+			{% endif %}
+	
+	
+			{% if profile.twitter_link  %}
+		
+				
+			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.twitter_link}}">
+				<h3 style="margin-bottom: 0cm;margin-top:-0.14cm;font-size: 1rem"> <img  height="12" width="12" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\twitter.svg" alt="no pic">&nbsp; <span style="font-size: 1rem;color: rgb(71, 71, 71);"> {{profile.twitter_link }}</span></h3>
+			</a>
+		
+			{% endif %}
+	
+	
+			{% if profile.personal_link  %}
+			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.personal_link}}">
+				<h3 style="margin-bottom: 0cm;margin-top:-0.14cm;font-size: 1rem"> <img  height="12" width="12" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\globe.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.personal_link }}</span></h3>
+
+			</a>
+			
+			{% endif %}
+			
+			<h3 style="margin-bottom: 0cm;margin-top:-0.14cm;font-size: 1.1rem;color:rgb(30, 30, 30)"> phone : <span style="color: rgb(71, 71, 71);font-size: 0.9rem"> +27 565 8616</span></h3>
+			<h3 style="margin-top: -0.3cm;margin-top:-0.14cm;font-size: 1.1rem;color:rgb(30, 30, 30)"> email : <span style="color: rgb(71, 71, 71);font-size: 0.9rem"> kmokhele@gmail.com</span></h3>
+			
+		</td>
+
+
+
+	</tr>
+</table>	
+
+<h6 style="color: rgb(135, 153, 254);margin-top: -0.7cm;margin-bottom: 0.6cm;">  ___________________________________________________________________________________________________________________________</h6>
+
+<table>
+	<tr>
+		<td style="width:17% ;">
+			<div style="color: rgb(83, 83, 83);font-size: 1.4 rem;"> Summery </div>
+		</td>
+		<td style="width:80% ;">
+			
+		</td>
+	</tr>
+	<tr>
+		<td style="width:17% ;">
+
+		</td>
+		<td style="width:80% ;">
+			<div style="padding-top: -0.7cm;">
+				<p style="font-size: 1.2rem;margin-left: 20px">
+					{{profile.bio}}
+				</p>
+			</div>
+		
+		</td>
+	</tr>
+</table>
+
+
+	<h1 style="margin-bottom: -0.2cm;font-size: 1.9rem;color: rgb(73, 100, 255)"> <strong>Experience </strong></h1>
+	<h6 style="color: rgb(135, 153, 254);margin-top: -0.7cm;margin-bottom: 0.6cm;">  ___________________________________________________________________________________________________________________________</h6>
+
+	{% for experience in experiences %}
+		<table>
+			<tr>
+				<td style="width:17% ;">
+					<h6 style="margin-bottom: 0cm;font-size: 1rem;margin-top: 0cm;color:rgb(129, 129, 129);"> Aug 2026 - Sep 2030</h6>
+				<br>
+					
+				</td>
+				<td style="width:80%; border-left: 1px solid  rgb(73, 100, 255);">
+					<h2 style="margin-bottom: 0cm;font-size: 1.4rem;margin-left: 20px;"> <strong> {{experience.job_title}} </strong>  </h2>  
+					<h4 style="margin-top: 0cm;font-size: 1.1rem;color:rgb(103, 103, 103);margin-left: 20px;" >{{experience.company_name}}</h4>
+					
+				</td>
+			</tr>
+			<tr>
+				<td style="width:17%; ">
+					
+					
+				</td>
+				<td style="width:80%; border-left: 1px solid  rgb(73, 100, 255);">
+					
+					<p style="font-size: 1.2rem;color:rgb(44, 44, 44);margin-left: 20px;">{{experience.job_description}}</p>
+				</td>
+			</tr>
+		</table> 
+		<br>
+{% endfor %}
+
+<h1 style="margin-bottom: -0.2cm;font-size: 1.9rem;color: rgb(73, 100, 255)"> <strong>Education </strong></h1>
+<h6 style="color: rgb(135, 153, 254);margin-top: -0.7cm;margin-bottom: 0.6cm;">  ___________________________________________________________________________________________________________________________</h6>
+
+{% for education in educations %}
+	<table>
+		<tr>
+			<td style="width:17%">
+				<h6 style="margin-bottom: 0cm;font-size: 1rem;margin-top: 0cm;color:rgb(129, 129, 129);"> Aug 2026 - Sep 2030</h6>
+				<br>
+				
+			</td>
+			<td style="width:80%;border-left: 1px solid  rgb(73, 100, 255);">
+				<h2 style="margin-bottom: 0cm;font-size: 1.4rem;margin-left: 20px;"> <strong> {{education.institution_name}}</strong>  </h2>  
+				<h4 style="margin-top: 0cm;font-size: 1.1rem;color:rgb(103, 103, 103);margin-left: 20px;" >{{education.qualification_name}}</h4>
+				
+			</td>
+		</tr>
+		<tr>
+			<td style="width:17%">
+				
+				
+			</td>
+			<td style="width:80%;border-left: 1px solid  rgb(73, 100, 255);">
+				
+				<p style="font-size: 1.2rem;color:rgb(44, 44, 44);margin-left: 20px;">{{education.education_description}}</p>
+			</td>
+		</tr>
+	</table> 
+	<br>
+{% endfor %}
+
+
+<h1 style="margin-bottom: -0.2cm;font-size: 1.9rem;color: rgb(73, 100, 255)"> <strong>Skills</strong></h1>
+<h6 style="color: rgb(135, 153, 254);margin-top: -0.7cm;margin-bottom: 0.6cm;">  ___________________________________________________________________________________________________________________________</h6>
+
+
+	<table>
+		<tr>
+			
+				<td style="width:30%">
+					{% for skill in skills %}  
+						{% if forloop.counter|modulo:2 == 1 %}
+						<h3 style="margin-bottom: 0cm;font-size: 1.5rem"> <img  height="18" width="18" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\bluetick.png" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></h3>
+
+						{% endif %}
+					{% endfor %}
+				</td>
+			
+
+
+			
+			
+				<td style="width:30%">
+					{% for skill in skills %}  
+						{% if forloop.counter|modulo:2 == 0 %}
+						<h3 style="margin-bottom: 0cm;font-size: 1.5rem"> <img  height="18" width="18" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\bluetick.png" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></h3>
+
+						{% endif %}
+					{% endfor %}
+				</td>
+			
+		</tr>
+	</table>
+
+
+
+	<h1 style="margin-bottom: -0.2cm;font-size: 1.9rem;color: rgb(73, 100, 255)"> <strong>Languages</strong></h1>
+	<h6 style="color: rgb(135, 153, 254);margin-top: -0.7cm;margin-bottom: 0.6cm;">  ___________________________________________________________________________________________________________________________</h6>
+	
+
+		{% for language in languages %}
+			
+		<h3 style="margin-bottom: 0cm;font-size: 1.5rem"> <img  height="18" width="18" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\bluetick.png" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{language.language_name}} </span></h3>
+
+			
+			{% empty %}
+			no languages yet
+		{% endfor %}
+
