@@ -41,13 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # my apps
-   # 'base.apps.BaseConfig',
     'main_app.apps.MainAppConfig',
     'profiles_app.apps.ProfilesAppConfig',
     
     # 3rd party apps
     'bootstrap5',
-    #'easy_pdf',
+   
 ]
 
 #AUTHENTICATION_BACKENDS = ['profilesApp.emailbackends.EmailBackend']
@@ -142,6 +141,9 @@ MEDIA_URL = "/images/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+LOGIN_URL = 'profiles_app:login'
+LOGOUT_REDIRECT_URL = 'main_app:landing_page'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

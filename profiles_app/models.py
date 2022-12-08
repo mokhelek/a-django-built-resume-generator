@@ -33,11 +33,7 @@ class Profile(models.Model):
     twitter_link = models.URLField(null=True, blank=True)
     github_link = models.URLField(null=True, blank=True)
     personal_link = models.URLField(null=True, blank=True)
-    
-    def save(self,*args,**kwargs):
-        new_image = compress(self.avatar)
-        self.avatar = new_image
-        super().save(*args,**kwargs)
+ 
     
     def __str__(self):
         return self.last_name + "  " + self.first_name
@@ -59,10 +55,7 @@ class Experience(models.Model):
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
     
-    def save(self,*args,**kwargs):
-        new_image = compress(self.company_logo)
-        self.company_logo = new_image
-        super().save(*args,**kwargs)
+
     
     def __str__(self):
         return self.job_title

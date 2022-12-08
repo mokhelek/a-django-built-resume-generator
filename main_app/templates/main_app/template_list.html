@@ -13,38 +13,45 @@
 </style>
 
 
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color:#00672A;height:80px;position: relative;">
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color:#63f79e19;height:70px;position: relative;box-shadow: 0 0 8px rgb(170, 170, 170);">
     <div class="container-fluid" style="width: 92%;">
       
       {% if user.is_authenticated %}
       <a class="navbar-brand d-flex" href="{% url 'main_app:index' %}">
-      &nbsp;<h1 style="color:rgb(236, 252, 218);font-weight:600;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" >resu.</h1> 
+      &nbsp;<h1 style="color:#00672A;font-weight:600;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" >resu.</h1> 
       <h1 style="color: rgb(53, 124, 255);font-weight:600;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">me_</h1>  &nbsp;
     </a>
     {% else %}
     <a class="navbar-brand d-flex" href="{% url 'main_app:landing_page' %}">
-        &nbsp;<h1 style="color:rgb(236, 252, 218);font-weight:600;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" >resu.</h1> 
+        &nbsp;<h1 style="color:#00672A;font-weight:600;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" >resu.</h1> 
         <h1 style="color: rgb(53, 124, 255);font-weight:600;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">me_</h1>  &nbsp;
       </a>
     {% endif %}
 
     
-        <div style="background-color:#00672A;" class="d-none d-lg-block ">  
+        <div style="background-color:#63f79e00;" class="d-none d-lg-block ">  
             <div > 
                 <ul class="navbar-nav  me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a style="color: #F5FFCE;" class="nav-link" href="#">home</a> 
+                        <a style="color:#00672A;" class="nav-link" href="{% url 'main_app:index' %}">home</a> 
                     </li>&nbsp;&nbsp;&nbsp;
                     <li class="nav-item">
-                        <a style="color: #F5FFCE;" class="nav-link" href="#">about</a>
+                        <a style="color: #00672A;" class="nav-link" href="{% url 'main_app:landing_page' %}">about</a>
                     </li>&nbsp;&nbsp;&nbsp;
                     <li class="nav-item">
-                        <a style="color: #F5FFCE;" class="nav-link" href="#">templates</a>
+                        <a style="color: #00672A;" class="nav-link" href="{% url 'main_app:templates_list' %}">templates</a>
                     </li>&nbsp;&nbsp;&nbsp;
+                    {%  if user.is_authenticated %}
                     <li class="nav-item" style="padding-top:4px;">
-                        <a style="color: #F5FFCE;; background-color: #95f8bd51; font-size: 1rem;border:#00ec5e5f 2px solid;" class=" btn btn-sm rounded-pill" href="{% url 'profiles_app:login' %}"> &nbsp; sign in &nbsp; </a>
+                        <a style="color: #595959; background-color: #65656520; font-size: 1rem;border:#5555555f 2px solid;" class=" btn btn-sm rounded-pill" href="{% url 'profiles_app:logout' %}"> &nbsp; logout &nbsp; </a>
                     </li>
-                    
+               
+                    {%  else %}
+                      
+                    <li class="nav-item" style="padding-top:4px;">
+                        <a style="color: #00672A; background-color: #95f8bd51; font-size: 0.85rem;border:#00ec5e5f 2px solid;" class=" btn btn-sm rounded-pill" href="{% url 'profiles_app:login' %}"> &nbsp; sign in &nbsp; </a>
+                    </li>
+                    {%  endif %}
                 </ul>
             </div>
       </div>
@@ -56,7 +63,7 @@
 
     <div    class="d-flex   justify-content-end">
         <button class="btn btn-outline-secodary " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-list    text-success" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list    text-success" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
             </svg>
         </button>
@@ -105,7 +112,7 @@
 <div class="container">
     <br>
 
-        <h1><strong>Template List</strong></h1>
+        <h3><strong>Pick a Template</strong></h3>
         <br>
         <div  class="row">
             {% for template in templates %}

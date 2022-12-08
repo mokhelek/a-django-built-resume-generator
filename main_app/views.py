@@ -11,16 +11,17 @@ from django.contrib.staticfiles import finders
 
 from django.conf import settings
 
-
 from profiles_app.models import *
 from main_app.models import *
 from profiles_app.forms import *
 
+from django.contrib.auth.decorators import login_required
 
 def landing_page(request):
     context = {}
     return render(request , "main_app/landing_page.html", context)
 
+@login_required
 def index(request):
     logged_in_user = Profile.objects.get(user = request.user)
     profile = Profile.objects.get(user=request.user)
@@ -81,7 +82,8 @@ def index(request):
         "add_education_form":add_education_form ,
         }
     return render(request, 'main_app/index.html', context)
-    
+
+@login_required  
 def edit_experience(request, experience_id ):
     experience = Experience.objects.get(id = experience_id)
     if request.method != 'POST':
@@ -100,6 +102,7 @@ def edit_experience(request, experience_id ):
 
     return render(request, 'main_app/experience.html', context)
 
+@login_required
 def add_education(request ):
     logged_in_user = Profile.objects.get(user = request.user)
     if request.method != 'POST':
@@ -118,6 +121,7 @@ def add_education(request ):
         }
     return render(request, 'main_app/add_education.html', context)
 
+@login_required
 def add_skill(request):
     logged_in_user = Profile.objects.get(user = request.user)
     if request.method != 'POST':
@@ -136,6 +140,7 @@ def add_skill(request):
         }
     return render(request, 'main_app/add_education.html', context)
 
+@login_required
 def add_language(request):
     logged_in_user = Profile.objects.get(user = request.user)
     if request.method != 'POST':
@@ -154,11 +159,13 @@ def add_language(request):
         }
     return render(request, 'main_app/add_education.html', context)
 
+@login_required
 def delete_experience(request, experience_id ):
     experience = Experience.objects.get(id = experience_id)
     experience.delete()
     return redirect("main_app:index")
 
+@login_required
 def edit_education(request, education_id ):
     education = Education.objects.get(id = education_id)
     if request.method != 'POST':
@@ -175,21 +182,25 @@ def edit_education(request, education_id ):
         }
     return render(request, 'main_app/education.html', context)
 
+@login_required
 def delete_education(request, education_id ):
     education = Education.objects.get(id = education_id)
     education.delete()
     return redirect("main_app:index")
 
+@login_required
 def delete_skill(request, skill_id ):
     skill = Skills.objects.get(id = skill_id)
     skill.delete()
     return redirect("main_app:index")
 
+@login_required
 def delete_language(request, language_id ):
     languages = Languages.objects.get(id = language_id)
     languages.delete()
     return redirect("main_app:index")
 
+@login_required
 def templates_list(request):
     templates = PDFTemplate.objects.all()[::-1]
     profile = Profile.objects.get(user=request.user)
@@ -199,6 +210,7 @@ def templates_list(request):
     }
     return render(request, 'main_app/template_list.html', context)
 
+@login_required
 def link_callback(uri, rel):
 	"""
 	Convert HTML URIs to absolute system paths so xhtml2pdf can access those
@@ -230,6 +242,7 @@ def link_callback(uri, rel):
 			)
 	return path
 
+@login_required
 def render_pdf_view(request , profile_id , template_id ):
     profile = Profile.objects.get(id = profile_id)
     choosen_template = PDFTemplate.objects.get(id=template_id)
@@ -268,6 +281,7 @@ def render_pdf_view(request , profile_id , template_id ):
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
+@login_required
 def render_pdf_view_test(request , profile_id ):
     profile = Profile.objects.get(id = profile_id)
   

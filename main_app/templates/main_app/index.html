@@ -225,7 +225,7 @@
             <div class="d-flex justify-content-center">
 
                    <div class="row">
-                    {%     if profile.linkedin_link != None %}                       
+                    {%  if profile.linkedin_link != None %}                       
                     <div class="col-3">
                         <a style="text-decoration: none;opacity: 0.5; color: rgb(53, 53, 255);" href="{{profile.linkedin_link}}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
@@ -234,8 +234,8 @@
                         </a>
                     </div>
                     {%  endif %}
-
-                    {%     if profile.twitter_link != None %}
+                    &nbsp;
+                    {% if profile.twitter_link != None %}
                     <div class="col-3">
                         <a style="text-decoration: none;opacity: 0.5; color: rgb(53, 53, 255)" href="{{profile.twitter_link}}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -244,7 +244,7 @@
                         </a>
                     </div>
                     {%  endif %}
-
+                    &nbsp;
                     {%     if profile.github_link != None %}
                     <div class="col-3">
                         <a style="text-decoration: none;opacity: 0.5; color: rgb(53, 53, 255)" href="{{profile.github_link}}">
@@ -252,21 +252,20 @@
                                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                             </svg>
                         </a>
-                        
                     </div>
                     {%  endif %}
-
-                    {%     if profile.personal_link != None %}
+                    &nbsp;
+                    {%  if profile.personal_link != None %}
                     <div class="col-3">
                         <a style="text-decoration: none;opacity: 0.5; color: rgb(53, 53, 255)" href="{{profile.personal_link}}">
-                        
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
                             <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
                         </svg>
                         </a>
                     </div>
+                    {%  endif %}
                 </div>
-                {%  endif %}
+                
 
             </div>          
 
@@ -343,403 +342,403 @@
             </div>
             
 
-                <div class="col-md-8  col-lg-9" style="background-color: #ffffff85;">
-                    <div   id="my_margin" style="margin: 0.5cm 1cm 1cm 1cm;" >
-                        
-                    <div   id="full_details"  >
+            <div class="col-md-8  col-lg-9" style="background-color: #ffffff85;">
+                <div   id="my_margin" style="margin: 0.5cm 1cm 1cm 1cm;" >
+                    
+                <div   id="full_details"  >
 
-                        <div class="row">
-                        
+                    <div class="row">
+                    
+                            
+                            <div class="col-12">
+                            
+
+                                <h3 style="margin-bottom: 0.9rem;"> <b style="color: #00672A;">Summery  </b>
                                 
-                                <div class="col-12">
+                                    <button onclick="personalFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                        </svg>  
+                                    </button>
+
+                                </h3>
+                                <div       id="summery"  style="border-left: 4px solid rgba(4, 189, 22, 0.397);background-color: #22ac0012;width: 93%; ">
+                                <div  >
+                                    <h6 class="lead" style="font-size: 0.98rem;margin-left: 16px;padding-top: 10px;padding-bottom: 10px;color: #434242d3;">{{profile.bio}} </h6>   
+                                </div>
                                 
+                                </div>
+                                <h6 style="font-weight: 600;"></h6>
+                                <hr> 
 
-                                    <h3 style="margin-bottom: 0.9rem;"> <b style="color: #00672A;">Summery  </b>
-                                    
-                                        <button onclick="personalFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                                            </svg>  
-                                        </button>
-
-                                    </h3>
-                                    <div       id="summery"  style="border-left: 4px solid rgba(4, 189, 22, 0.397);background-color: #22ac0012;width: 93%; ">
-                                    <div  >
-                                        <h6 class="lead" style="font-size: 0.98rem;margin-left: 16px;padding-top: 10px;padding-bottom: 10px;color: #434242d3;">{{profile.bio}} </h6>   
-                                    </div>
-                                    
-                                    </div>
-                                    <h6 style="font-weight: 600;"></h6>
-                                    <hr> 
-
-                                            <div class="row">    &nbsp;&nbsp;&nbsp;
-                                                
-        
-                                                <div class="col-lg-11 col-12">
-                                                    <h3 style="margin-bottom: 1.2rem;"> <b style="color: #00672A;"> Experience</b> 
-                                                        <button onclick="experiencesFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                                                            </svg>  
-                                                        </button>
-                                                    
-                                                    </h3>
-                                                
-                                                    <div class="timeline">
-                                                    {% for experience in experiences %}  
-                                                        <div class="timeline-wrapper">
-                                                            <div class="timeline-yr">
-                                                            <span style="color: rgb(32, 32, 32);"> </span>
-                                                            </div>
-                                                            <div class="timeline-info">
-                                                                <h3 style="font-size: 1.4rem !important;color:rgb(60, 60, 60);font-weight:600 ; margin-bottom: 0.1cm;"><span>{{experience.job_title}}</h3>
-                                                                <h6 style="margin-top: 0cm;font-size: 0.9rem !important;  color:rgb(84, 84, 84);margin-bottom: 0.1cm;" >{{experience.company_name}} &bull; <span style="color: gray;font-size:0.75rem;margin-bottom: 0.1cm;"> Aug 2022 - Jan 2023 </span>  </h6>
-                                                            
-                                                                <p style="color: rgb(101, 101, 101);margin-bottom: 0cm;font-size: 0.9rem">{{experience.job_description|truncatechars:200}}</p>
-                                        
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        {% empty %}
-                                                        <center>
-                                                            <h3><strong> No Experience Yet</strong></h3>
-                                                            <br>
-                                                            <img style="width: 25%;height: auto;" src="{% static 'images/illustrations/undraw_no_data_re_kwbl.svg' %}" alt="">
-                                                            <br><br>
-                                                            <a href="{% url 'main_app:add_experience' %}" class="btn btn-success">Add Experience</a>
-                                                        </center>
-                                                        {% endfor %}
-                                                </div>
-
-
-                                                </div>
-
-                                        </div>
-
-                                        <hr>
-                                        <h3 style="margin-bottom: 1.2rem;"> <b style="color:#00672A;"> Education </b>
-                                                <span>
-                                                    <button onclick="educationFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
+                                        <div class="row">    &nbsp;&nbsp;&nbsp;
+                                            
+    
+                                            <div class="col-lg-11 col-12">
+                                                <h3 style="margin-bottom: 1.2rem;"> <b style="color: #00672A;"> Experience</b> 
+                                                    <button onclick="experiencesFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                                                         </svg>  
                                                     </button>
-                                                </span>
-                                    </h3>
-                                    
-                                    <div class="row">
-                                        {% for education in educations %} 
-                                            <div class="col-lg-6 col-12">
-                                                    <div class=" card card-body"   id="education_card" style="height:190px">
-                                                    <h4 style="margin-bottom: 0cm;">  <strong>  {{education.institution_name}}  </strong></h5> 
-                                                    <h6 style="color: rgb(92, 92, 92);font-size:1rem;margin-bottom: 0.1cm;">  {{education.qualification_name}}    </h6> 
-                                                    <h6 style="color: gray;font-size: 0.8rem; ">   Aug 2022 - Jan 2023</h6> 
-                                                        <p> {{education.education_description|truncatechars:120}} </p>
-                                                    
-                                                    </div>    
-                                                    <br>                                          
-                                                </div>
                                                 
-                                                {% empty %}
-                                                <center>
-                                                    <h3><strong> No Education Yet</strong></h3>
-                                                    <br>
-                                                    <img style="width: 25%;height: auto;" src="{% static 'images/illustrations/undraw_no_data_re_kwbl.svg' %}" alt="">
-                                                    <br><br>
-                                                    <a href="{% url 'main_app:add_education' %}" class="btn btn-success">Add Education</a>
-                                                    <br>
-                                                </center>
-                                                {% endfor %}
+                                                </h3>
                                             
-                                    </div>
-                        </div>
-
-
-                                            <hr>
-            
-                                    <div class="row">
-                                        <div class="col-12  col-md-6 ">
-                                            <h4> <b style="color:#00672A;"> Skills</b>
-                                            
-                                                <button onclick="skillsFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                                                    </svg>  
-                                                </button>
-
-                                            </h4>
-                                            <hr>
-                                            <ul>
-                                                {% for skill in skills %}
+                                                <div class="timeline">
+                                                {% for experience in experiences %}  
+                                                    <div class="timeline-wrapper">
+                                                        <div class="timeline-yr">
+                                                        <span style="color: rgb(32, 32, 32);"> </span>
+                                                        </div>
+                                                        <div class="timeline-info">
+                                                            <h3 style="font-size: 1.4rem !important;color:rgb(60, 60, 60);font-weight:600 ; margin-bottom: 0.1cm;"><span>{{experience.job_title}}</h3>
+                                                            <h6 style="margin-top: 0cm;font-size: 0.9rem !important;  color:rgb(84, 84, 84);margin-bottom: 0.1cm;" >{{experience.company_name}} &bull; <span style="color: gray;font-size:0.75rem;margin-bottom: 0.1cm;"> {{experience.start_date|date:"M Y" }} - {{experience.end_date|date:"M Y" }} </span>  </h6>
+                                                        
+                                                            <p style="color: rgb(101, 101, 101);margin-bottom: 0cm;font-size: 0.9rem">{{experience.job_description|truncatechars:200}}</p>
+                                    
+                                                        </div>
+                                                    </div>
                                                     
-                                                    <h3 style="margin-bottom: 0cm;font-size: 1.5rem"> <img  height="18" width="18" src="{% static 'images/icons/greentick.png' %}" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></h3>
                                                     {% empty %}
                                                     <center>
-                                                        <h4><strong> No Skills Yet</strong></h4>
+                                                        <h3><strong> No Experience Yet</strong></h3>
                                                         <br>
                                                         <img style="width: 25%;height: auto;" src="{% static 'images/illustrations/undraw_no_data_re_kwbl.svg' %}" alt="">
                                                         <br><br>
-                                                        <button onclick="skillsFunction()" class="btn btn-success">Add Skill</button>
+                                                        <a href="#" onclick="addExperiencesFunction()" class="btn btn-success">Add Experience</a>
                                                     </center>
-                                                {% endfor %}
-                                            </ul>
-                    
-                                        </div>
-                                        <div class="col-12 col-md-6  ">
-                                            <h4> <b style="color:#00672A;"> Languages </b>
-                                                <button onclick="languagesFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                    {% endfor %}
+                                            </div>
+
+
+                                            </div>
+
+                                    </div>
+
+                                    <hr>
+                                    <h3 style="margin-bottom: 1.2rem;"> <b style="color:#00672A;"> Education </b>
+                                            <span>
+                                                <button onclick="educationFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                                         <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                                                     </svg>  
                                                 </button>
-                                            
-                                            </h4>
-                                            <hr>
-                                            <ul>
-                                                {% for language in languages %}
+                                            </span>
+                                </h3>
+                                
+                                <div class="row">
+                                    {% for education in educations %} 
+                                        <div class="col-lg-6 col-12">
+                                                <div class=" card card-body"   id="education_card" style="height:190px">
+                                                <h4 style="margin-bottom: 0cm;">  <strong>  {{education.institution_name}}  </strong></h5> 
+                                                <h6 style="color: rgb(92, 92, 92);font-size:1rem;margin-bottom: 0.1cm;">  {{education.qualification_name}}    </h6> 
+                                                <h6 style="color: gray;font-size: 0.8rem; ">   {{education.start_date|date:"M Y" }} - {{education.end_date|date:"M Y" }}</h6> 
+                                                    <p> {{education.education_description|truncatechars:120}} </p>
                                                 
+                                                </div>    
+                                                <br>                                          
+                                            </div>
                                             
+                                            {% empty %}
+                                            <center>
+                                                <h3><strong> No Education Yet</strong></h3>
+                                                <br>
+                                                <img style="width: 25%;height: auto;" src="{% static 'images/illustrations/undraw_no_data_re_kwbl.svg' %}" alt="">
+                                                <br><br>
+                                                <a href="#" onclick="addEducationFunction()" class="btn btn-success">Add Education</a>
+                                                <br><br>
+                                            </center>
+                                            {% endfor %}
                                         
-                                            <h3 style="margin-bottom: 0cm;font-size: 1.5rem"> <img  height="18" width="18" src="{% static 'images/icons/greentick.png' %}" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem">  {{language.language_name}}  </span></h3>
+                                </div>
+                    </div>
 
-                                            
+
+                                        <hr>
+        
+                                <div class="row">
+                                    <div class="col-12  col-md-6 ">
+                                        <h4> <b style="color:#00672A;"> Skills</b>
+                                        
+                                            <button onclick="skillsFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                                </svg>  
+                                            </button>
+
+                                        </h4>
+                                        <hr>
+                                        <ul>
+                                            {% for skill in skills %}
                                                 
+                                                <h3 style="margin-bottom: 0cm;font-size: 1.5rem"> <img  height="18" width="18" src="{% static 'images/icons/greentick.png' %}" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></h3>
                                                 {% empty %}
                                                 <center>
-                                                    <h4><strong> No Languages Yet</strong></h4>
+                                                    <h4><strong> No Skills Yet</strong></h4>
                                                     <br>
                                                     <img style="width: 25%;height: auto;" src="{% static 'images/illustrations/undraw_no_data_re_kwbl.svg' %}" alt="">
                                                     <br><br>
-                                                    <button onclick="languagesFunction()"  class="btn btn-success">Add language</button>
+                                                    <button onclick="skillsFunction()" class="btn btn-success">Add Skill</button>
                                                 </center>
                                             {% endfor %}
-                                            </ul>
-                                        </div>
+                                        </ul>
+                
                                     </div>
+                                    <div class="col-12 col-md-6  ">
+                                        <h4> <b style="color:#00672A;"> Languages </b>
+                                            <button onclick="languagesFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                                </svg>  
+                                            </button>
+                                        
+                                        </h4>
+                                        <hr>
+                                        <ul>
+                                            {% for language in languages %}
+                                            
+                                        
+                                    
+                                        <h3 style="margin-bottom: 0cm;font-size: 1.5rem"> <img  height="18" width="18" src="{% static 'images/icons/greentick.png' %}" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem">  {{language.language_name}}  </span></h3>
+
+                                        
+                                            
+                                            {% empty %}
+                                            <center>
+                                                <h4><strong> No Languages Yet</strong></h4>
+                                                <br>
+                                                <img style="width: 25%;height: auto;" src="{% static 'images/illustrations/undraw_no_data_re_kwbl.svg' %}" alt="">
+                                                <br><br>
+                                                <button onclick="languagesFunction()"  class="btn btn-success">Add language</button>
+                                            </center>
+                                        {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            
+                    </div>
+
+                </div>
+
+                <div id="personal_info" style="border: 1px solid rgba(0, 128, 0, 0.501);border-radius: 10px;background-color: rgba(0, 128, 0, 0.104);display: none;">
+                    <form style="margin: 0.8cm;" enctype="multipart/form-data" action="{% url 'main_app:index' %}" method="post">
+                        {% csrf_token %}
+                        {% bootstrap_form personal_info_form %}
+                        <button class="btn btn-success btn-sm" name="submit">Save</button>
+                    </form>
+                </div>
+            
+                <div id="experiences" style="display: none;">
+                    <div style="display: flex;">
+                        <h3> <b style="color:#00672A;"> Experience </b> </h3>
+                            &nbsp; &nbsp;
+                            <button onclick="addExperiencesFunction()" style="color:#1349fa;background: none;border: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="23" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                                    </svg>
+                            </button>
+
+                    
+                    </div>
+                    <hr>
+
+
+                    <div class="timeline">
+                        {% for experience in experiences %}  
+                            <div class="timeline-wrapper">
+                                <div class="timeline-yr">
+                                <span style="color: rgb(32, 32, 32);"> </span>
+                                </div>
+                                <div class="timeline-info">
+                                    <h3 style="font-size: 1.4rem !important;color:rgb(60, 60, 60);font-weight:600 ; margin-bottom: 0.1cm;"><span>{{experience.job_title}}</h3>
+                                    <h6 style="margin-top: 0cm;font-size: 0.9rem !important;  color:rgb(84, 84, 84);margin-bottom: 0.1cm;" >{{experience.company_name}} &bull; <span style="color: gray;font-size:0.75rem;margin-bottom: 0.1cm;"> {{experience.start_date|date:"M Y" }} - {{experience.end_date|date:"M Y" }} </span>  </h6>
                                 
-                        </div>
+                                    <p style="color: rgb(101, 101, 101);margin-bottom: 0cm;font-size: 0.9rem">{{experience.job_description}}</p>
+                                    <div class="d-flex">
+                                        <a  class="btn btn-primary  btn-sm"  href="{% url 'main_app:experiences' experience.id %}">Edit</a> &nbsp;&nbsp;
+                                        <a  class="btn btn-outline-danger   btn-sm" href="{% url 'main_app:delete_experience' experience.id %}">Delete</a>
+                                        
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            
+                            {% empty %}
+                            <center>
+                                <h3><strong> No Experience Yet</strong></h3>
+                                <br>
+                                <img style="width: 25%;height: auto;" src="{% static 'images/illustrations/undraw_no_data_re_kwbl.svg' %}" alt="">
+                                <br><br>
+                                <a href="#" onclick="addExperiencesFunction()" class="btn btn-success">Add Experience</a>
+                            </center>
+                            {% endfor %}
+                    </div>
 
-                        </div>
 
-                    <div id="personal_info" style="border: 1px solid rgba(0, 128, 0, 0.501);border-radius: 10px;background-color: rgba(0, 128, 0, 0.104);display: none;">
-                        <form style="margin: 0.8cm;" enctype="multipart/form-data" action="{% url 'main_app:index' %}" method="post">
-                            {% csrf_token %}
-                            {% bootstrap_form personal_info_form %}
-                            <button class="btn btn-success btn-sm" name="submit">Save</button>
-                        </form>
+                    
+                </div>
+            
+                <div id="education" style="display: none;">
+                    <div style="display: flex;">
+                        <h3> <b style="color:#00672A;"> Education </b> </h3>
+                            &nbsp; &nbsp;
+                            <button onclick="addEducationFunction()" style="color:#1349fa;background: none;border: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="23" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                                    </svg>
+                            </button>
+
+                    
                     </div>
                 
-                    <div id="experiences" style="display: none;">
-                        <div style="display: flex;">
-                            <h3> <b style="color:#00672A;"> Experience </b> </h3>
-                                &nbsp; &nbsp;
-                                <button onclick="addExperiencesFunction()" style="color:#1349fa;background: none;border: none;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="23" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                                      </svg>
-                                </button>
-
-                        
-                        </div>
-                        <hr>
-
-
-                        <div class="timeline">
-                            {% for experience in experiences %}  
-                                <div class="timeline-wrapper">
-                                    <div class="timeline-yr">
-                                    <span style="color: rgb(32, 32, 32);"> </span>
-                                    </div>
-                                    <div class="timeline-info">
-                                        <h3 style="font-size: 1.4rem !important;color:rgb(60, 60, 60);font-weight:600 ; margin-bottom: 0.1cm;"><span>{{experience.job_title}}</h3>
-                                        <h6 style="margin-top: 0cm;font-size: 0.9rem !important;  color:rgb(84, 84, 84);margin-bottom: 0.1cm;" >{{experience.company_name}} &bull; <span style="color: gray;font-size:0.75rem;margin-bottom: 0.1cm;"> Aug 2022 - Jan 2023 </span>  </h6>
-                                    
-                                        <p style="color: rgb(101, 101, 101);margin-bottom: 0cm;font-size: 0.9rem">{{experience.job_description}}</p>
+                    <hr>
+                    <div class="row">
+                        {% for education in educations %} 
+                            <div class="col-lg-6 col-12">
+                                    <div class=" card card-body"   id="education_card" style="height:190px">
+                                    <h4 style="margin-bottom: 0cm;">  <strong>  {{education.institution_name}}  </strong></h5> 
+                                    <h6 style="color: rgb(92, 92, 92);font-size:1rem;margin-bottom: 0.1cm;">  {{education.qualification_name}}    </h6> 
+                                    <h6 style="color: gray;font-size: 0.8rem; ">   {{education.start_date|date:"M Y" }} - {{education.end_date|date:"M Y" }}</h6> 
+                                        <p> {{education.education_description|truncatechars:120}} </p>
                                         <div class="d-flex">
-                                            <a  class="btn btn-primary  btn-sm"  href="{% url 'main_app:experiences' experience.id %}">Edit</a> &nbsp;&nbsp;
-                                            <a  class="btn btn-outline-danger   btn-sm" href="{% url 'main_app:delete_experience' experience.id %}">Delete</a>
-                                            
+                                            <a  class="btn btn-primary  btn-sm"  href="{% url 'main_app:education' education.id %}">Edit</a> &nbsp;&nbsp;
+                                            <a  class="btn btn-outline-danger   btn-sm" href="{% url 'main_app:delete_education' education.id %}">Delete</a>
                                         </div>
-                                        <br>
-                                    </div>
+                                    </div>    
+                                    <br>                                          
                                 </div>
                                 
                                 {% empty %}
                                 <center>
-                                    <h3><strong> No Experience Yet</strong></h3>
+                                    <h3><strong> No Education Yet</strong></h3>
                                     <br>
                                     <img style="width: 25%;height: auto;" src="{% static 'images/illustrations/undraw_no_data_re_kwbl.svg' %}" alt="">
                                     <br><br>
-                                    <a href="{% url 'main_app:add_experience' %}" class="btn btn-success">Add Experience</a>
+                                    <a href="#" onclick="addExperiencesFunction()" class="btn btn-success">Add Education</a>
+                                    <br>
                                 </center>
                                 {% endfor %}
-                        </div>
-
-
-                        
-                    </div>
-                
-                    <div id="education" style="display: none;">
-                        <div style="display: flex;">
-                            <h3> <b style="color:#00672A;"> Education </b> </h3>
-                                &nbsp; &nbsp;
-                                <button onclick="addEducationFunction()" style="color:#1349fa;background: none;border: none;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="23" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                                      </svg>
-                                </button>
-
-                        
-                        </div>
-                    
-                        <hr>
-                        <div class="row">
-                            {% for education in educations %} 
-                                <div class="col-lg-6 col-12">
-                                        <div class=" card card-body"   id="education_card" style="height:190px">
-                                        <h4 style="margin-bottom: 0cm;">  <strong>  {{education.institution_name}}  </strong></h5> 
-                                        <h6 style="color: rgb(92, 92, 92);font-size:1rem;margin-bottom: 0.1cm;">  {{education.qualification_name}}    </h6> 
-                                        <h6 style="color: gray;font-size: 0.8rem; ">   Aug 2022 - Jan 2023</h6> 
-                                            <p> {{education.education_description|truncatechars:120}} </p>
-                                            <div class="d-flex">
-                                                <a  class="btn btn-primary  btn-sm"  href="{% url 'main_app:education' education.id %}">Edit</a> &nbsp;&nbsp;
-                                                <a  class="btn btn-outline-danger   btn-sm" href="{% url 'main_app:delete_education' education.id %}">Delete</a>
-                                            </div>
-                                        </div>    
-                                        <br>                                          
-                                    </div>
-                                    
-                                    {% empty %}
-                                    <center>
-                                        <h3><strong> No Education Yet</strong></h3>
-                                        <br>
-                                        <img style="width: 25%;height: auto;" src="{% static 'images/illustrations/undraw_no_data_re_kwbl.svg' %}" alt="">
-                                        <br><br>
-                                        <a href="{% url 'main_app:add_education' %}" class="btn btn-success">Add Education</a>
-                                        <br>
-                                    </center>
-                                    {% endfor %}
-                                
-                        </div>
-                    </div>
-
-                    <div id="skills" style="display: none;">
-                        <h5><b>Skills</b></h5>
-                        <hr>
-        
-                        <form  action="{% url 'main_app:add_skill' %}" action="#" method="post">
-                        <div class="row">
-                            <div class="col-7   col-md-5    col-lg-4">
-                                {% csrf_token %}
-                                {% bootstrap_form add_skill_form %}
-                            </div>
-                            <div class="col-5   col-md-3 col-lg-2">
-                                <button class="btn btn-success " name="submit">add</button>
-                            </div>
-                        </div> 
-        
-                        </form>
-
-                        <div class="col-12  col-md-11   col-lg-9">
-                            <div class="row">
-                                {% for skill in skills %}
-                                <div class="col-6   col-md-4    col-lg-3" style="margin-bottom: 0.7rem;">
-                                    <div class="d-flex" > 
-                                        <h6 class="btn btn-outline-success btn-sm rounded-pill">
-                                        {{skill.skill_name}}  <a style="text-decoration: none;color: #00672A;" href="{% url 'main_app:delete_skill' skill.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                                        </svg> </a>
-                                        </h6>  
-                                    </div> 
-                                </div>
-                                {% empty %}
-                                    no skills yet
-                                {% endfor %}
-                            </div>
-                        </div>
-                    
-                        
-                        
                             
-                    
-        
-                    </div>
-                
-                    <div id="languages" style="display: none;">
-                        <h5><b>Languages</b></h5>
-                        <hr>
-                        <form  action="{% url 'main_app:add_language' %}"  method="post">
-                            <div class="row">
-                                <div class="col-7   col-md-5    col-lg-4">
-                                {% csrf_token %}
-                                {% bootstrap_form add_language_form %}
-                                </div>
-                                <div class="col-5   col-md-3 col-lg-2">
-                                <button class="btn btn-success " name="submit">add</button>
-                            </div>
-                            </div> 
-        
-                        </form>
-                    
-                            
-                    
-                        
-                        <div class="col-12  col-md-11   col-lg-9">
-                            <div class="row">
-                                {% for language in languages %}
-                                <div class="col-6   col-md-4    col-lg-3" style="margin-bottom: 0.7rem;">
-                                    <div class="d-flex" > 
-                                        <h6 class="btn btn-outline-success btn-sm rounded-pill">
-                                        {{language.language_name}}  <a style="text-decoration: none;color: #00672A;" href="{% url 'main_app:delete_language' language.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                                            </svg> </a>
-                                        </h6>  
-                                    </div> 
-                                </div>
-                                {% empty %}
-                                    no languages yet
-                                {% endfor %}
-                            </div>
-                        </div>
-                        
-                            
-                        
-                    </div>
-
-
-                    <div id="add_experience"   style="display: none;">
-                        <h3>   <b>  Add Experience </b></h3>
-                        <div class="container">
-                            <br>
-                            <form action="#" method="post" enctype="multipart/form-data">
-                              {% csrf_token %}
-                              {% bootstrap_form add_experience_form %}
-                              <button class="btn btn-success btn-sm" name="submit">add</button>
-                            </form>
-                        </div>
-                    </div>
-
-
-                    <div    id="add_education"   style="display: none;">
-                        <h3>   <b>  Add Education </b></h3>
-                        <div class="container">
-                            <br>
-                            <form action="#" method="post" enctype="multipart/form-data">
-                              {% csrf_token %}
-                              {% bootstrap_form add_education_form %}
-                              <button class="btn btn-success btn-sm" name="submit">add</button>
-                            </form>
-                        </div>
-                    </div>
-                    
-
                     </div>
                 </div>
+
+                <div id="skills" style="display: none;">
+                    <h5><b>Skills</b></h5>
+                    <hr>
+    
+                    <form  action="{% url 'main_app:add_skill' %}" action="#" method="post">
+                    <div class="row">
+                        <div class="col-7   col-md-5    col-lg-4">
+                            {% csrf_token %}
+                            {% bootstrap_form add_skill_form %}
+                        </div>
+                        <div class="col-5   col-md-3 col-lg-2">
+                            <button class="btn btn-success " name="submit">add</button>
+                        </div>
+                    </div> 
+    
+                    </form>
+
+                    <div class="col-12  col-md-11   col-lg-9">
+                        <div class="row">
+                            {% for skill in skills %}
+                            <div class="col-6   col-md-4    col-lg-3" style="margin-bottom: 0.7rem;">
+                                <div class="d-flex" > 
+                                    <h6 class="btn btn-outline-success btn-sm rounded-pill">
+                                    {{skill.skill_name}}  <a style="text-decoration: none;color: #00672A;" href="{% url 'main_app:delete_skill' skill.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                                    </svg> </a>
+                                    </h6>  
+                                </div> 
+                            </div>
+                            {% empty %}
+                                no skills yet
+                            {% endfor %}
+                        </div>
+                    </div>
+                
+                    
+                    
+                        
+                
+    
+                </div>
+            
+                <div id="languages" style="display: none;">
+                    <h5><b>Languages</b></h5>
+                    <hr>
+                    <form  action="{% url 'main_app:add_language' %}"  method="post">
+                        <div class="row">
+                            <div class="col-7   col-md-5    col-lg-4">
+                            {% csrf_token %}
+                            {% bootstrap_form add_language_form %}
+                            </div>
+                            <div class="col-5   col-md-3 col-lg-2">
+                            <button class="btn btn-success " name="submit">add</button>
+                        </div>
+                        </div> 
+    
+                    </form>
+                
+                        
+                
+                    
+                    <div class="col-12  col-md-11   col-lg-9">
+                        <div class="row">
+                            {% for language in languages %}
+                            <div class="col-6   col-md-4    col-lg-3" style="margin-bottom: 0.7rem;">
+                                <div class="d-flex" > 
+                                    <h6 class="btn btn-outline-success btn-sm rounded-pill">
+                                    {{language.language_name}}  <a style="text-decoration: none;color: #00672A;" href="{% url 'main_app:delete_language' language.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                                        </svg> </a>
+                                    </h6>  
+                                </div> 
+                            </div>
+                            {% empty %}
+                                no languages yet
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                        
+                    
+                </div>
+
+
+                <div id="add_experience"   style="display: none;">
+                    <h3>   <b>  Add Experience </b></h3>
+                    <div class="container">
+                        <br>
+                        <form action="#" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% bootstrap_form add_experience_form %}
+                            <button class="btn btn-success btn-sm" name="submit">add</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div    id="add_education"   style="display: none;">
+                    <h3>   <b>  Add Education </b></h3>
+                    <div class="container">
+                        <br>
+                        <form action="#" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% bootstrap_form add_education_form %}
+                            <button class="btn btn-success btn-sm" name="submit">add</button>
+                        </form>
+                    </div>
+                </div>
+                
+
+                </div>
+            </div>
 
          </div>
 

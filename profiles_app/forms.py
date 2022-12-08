@@ -27,6 +27,7 @@ class ProfileForm(ModelForm):
   
 class ExperiencesForm(ModelForm):
     start_date = forms.DateField(widget = forms.widgets.DateInput(attrs={'type':'date','rows':1 ,'columns':2}))
+    end_date = forms.DateField(widget = forms.widgets.DateInput(attrs={'type':'date','rows':1 ,'columns':2}))
 
     class Meta:
         model = Experience
@@ -34,6 +35,8 @@ class ExperiencesForm(ModelForm):
         exclude = ['profile']
         
 class EducationForm(ModelForm):
+    start_date = forms.DateField(widget = forms.widgets.DateInput(attrs={'type':'date','rows':1 ,'columns':2}))
+    end_date = forms.DateField(widget = forms.widgets.DateInput(attrs={'type':'date','rows':1 ,'columns':2}))
     class Meta:
         model = Education
         fields = '__all__'
