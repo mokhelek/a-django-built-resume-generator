@@ -3,7 +3,8 @@
 
 {% block content %}
 
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color:#63f79e19;height:70px;position: relative;box-shadow: 0 0 8px rgb(170, 170, 170);">
+
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color:#a1f6c319;height:70px;position: relative;box-shadow: 0 0 8px rgb(170, 170, 170);">
     <div class="container-fluid" style="width: 92%;">
       
       {% if user.is_authenticated %}
@@ -97,7 +98,7 @@
     </div>
   </nav>
 
-    <body style="background-color: rgba(75, 252, 87, 0.212); height: 100%;">
+    <body style="background-color: rgba(185, 255, 190, 0.212); height: 100%;">
         <section >
             <div class="d-none d-md-block">
                 <br><br><br><br>
@@ -118,7 +119,7 @@
                                 {% bootstrap_form form %}
                                 <span>
                                 <button name="submit" class="btn btn-success btn-sm">Sign In</button> 
-                                <span>&nbsp;&nbsp;  don't have an account? <a href="{% url 'profiles_app:register' %}">register</a></span>
+                                <span>&nbsp;&nbsp;  New User ? <a style="color:rgb(82, 82, 255);" href="{% url 'profiles_app:register' %}">register</a></span>
                                 </span>
                                 <input type="hidden" name="next" 
                                 value="{% url 'main_app:index' %}" />
