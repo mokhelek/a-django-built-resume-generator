@@ -30,48 +30,47 @@
 		</td>
 		<td style="width:90%;padding-left: 3cm;">
 			
-			
 			{% if profile.github_link  %}
 	
 	
-				<a style="text-decoration: none;color:rgb(40, 40, 40)" href="{{profile.github_link}}">
-					<h3 style="margin-bottom: 0cm;margin-top:-0.14cm;font-size: 1rem"> <img  height="12" width="12" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\github.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.github_link }}</span></h3>
-
-				</a>
-		
-			
-			{% endif %}
-	
-			{% if profile.linkedin_link  %}
-		
-			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.linkedin_link}}">
-				<h3 style="margin-bottom: 0cm;margin-top:-0.14cm;font-size: 1rem"> <img height="12" width="12" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\linkedin.svg" alt="">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.linkedin_link }}</span></h3>
+			<a style="text-decoration: none;color:rgb(40, 40, 40)" href="{{profile.github_link}}">
+				<h3 style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\github.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.github_link }}</span></h3>
 
 			</a>
 	
-			{% endif %}
-	
-	
-			{% if profile.twitter_link  %}
 		
-				
-			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.twitter_link}}">
-				<h3 style="margin-bottom: 0cm;margin-top:-0.14cm;font-size: 1rem"> <img  height="12" width="12" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\twitter.svg" alt="no pic">&nbsp; <span style="font-size: 1rem;color: rgb(71, 71, 71);"> {{profile.twitter_link }}</span></h3>
-			</a>
-		
-			{% endif %}
-	
-	
-			{% if profile.personal_link  %}
-			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.personal_link}}">
-				<h3 style="margin-bottom: 0cm;margin-top:-0.14cm;font-size: 1rem"> <img  height="12" width="12" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\globe.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.personal_link }}</span></h3>
+		{% endif %}
 
-			</a>
+		{% if profile.linkedin_link  %}
+	
+		<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.linkedin_link}}">
+			<h3 style="margin-bottom: 0cm;font-size: 1rem"> <img height="13" width="13" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\linkedin.svg" alt="">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.linkedin_link }}</span></h3>
+
+		</a>
+
+		{% endif %}
+
+
+		{% if profile.twitter_link  %}
+	
 			
-			{% endif %}
-			
-			<h3 style="margin-bottom: 0cm;margin-top:-0.14cm;font-size: 1.1rem;color:rgb(30, 30, 30)"> phone : <span style="color: rgb(71, 71, 71);font-size: 0.9rem"> +27 565 8616</span></h3>
-			<h3 style="margin-top: -0.3cm;margin-top:-0.14cm;font-size: 1.1rem;color:rgb(30, 30, 30)"> email : <span style="color: rgb(71, 71, 71);font-size: 0.9rem"> kmokhele@gmail.com</span></h3>
+		<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.twitter_link}}">
+			<h3 style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\twitter.svg" alt="no pic">&nbsp; <span style="font-size: 1rem;color: rgb(71, 71, 71);"> {{profile.twitter_link }}</span></h3>
+		</a>
+	
+		{% endif %}
+
+
+		{% if profile.personal_link  %}
+		<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.personal_link}}">
+			<h3 style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\globe.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.personal_link }}</span></h3>
+
+		</a>
+		
+		{% endif %}
+		
+		<h3 style="margin-bottom: 0cm;font-size: 1.2rem"> phone : <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.cell}}</span></h3>
+		<h3 style="margin-top: -0.3cm;font-size: 1.2rem"> email : <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.email}}</span></h3>
 			
 		</td>
 
@@ -114,7 +113,7 @@
 		<table>
 			<tr>
 				<td style="width:17% ;">
-					<h6 style="margin-bottom: 0cm;font-size: 1rem;margin-top: 0cm;color:rgb(129, 129, 129);"> Aug 2026 - Sep 2030</h6>
+					<h6 style="margin-bottom: 0cm;font-size: 1rem;margin-top: 0cm;color:rgb(129, 129, 129);"> {{experience.start_date|date:"M Y" }} - {{experience.end_date|date:"M Y" }}</h6>
 				<br>
 					
 				</td>
@@ -145,7 +144,7 @@
 	<table>
 		<tr>
 			<td style="width:17%">
-				<h6 style="margin-bottom: 0cm;font-size: 1rem;margin-top: 0cm;color:rgb(129, 129, 129);"> Aug 2026 - Sep 2030</h6>
+				<h6 style="margin-bottom: 0cm;font-size: 1rem;margin-top: 0cm;color:rgb(129, 129, 129);"> {{education.start_date|date:"M Y" }} - {{education.end_date|date:"M Y" }}</h6>
 				<br>
 				
 			</td>
@@ -174,26 +173,24 @@
 <h6 style="color: rgb(135, 153, 254);margin-top: -0.7cm;margin-bottom: 0.6cm;">  ___________________________________________________________________________________________________________________________</h6>
 
 
+
 	<table>
 		<tr>
 			
 				<td style="width:30%">
 					{% for skill in skills %}  
 						{% if forloop.counter|modulo:2 == 1 %}
-						<h3 style="margin-bottom: 0cm;font-size: 1.5rem"> <img  height="18" width="18" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\bluetick.png" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></h3>
+						<h3 style="margin-bottom: 0cm;font-size: 1.3rem">  <img height="15" width="15" src="C:/Users/Mokhele katleho/Desktop/resu.me_/Resume_Builder/static/images/icons/bluetick.png" alt=""> &nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></h3>
 
 						{% endif %}
 					{% endfor %}
 				</td>
 			
 
-
-			
-			
 				<td style="width:30%">
 					{% for skill in skills %}  
 						{% if forloop.counter|modulo:2 == 0 %}
-						<h3 style="margin-bottom: 0cm;font-size: 1.5rem"> <img  height="18" width="18" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\bluetick.png" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></h3>
+						<h3 style="margin-bottom: 0cm;font-size: 1.3rem"> <img height="15" width="15" src="C:/Users/Mokhele katleho/Desktop/resu.me_/Resume_Builder/static/images/icons/bluetick.png" alt=""> &nbsp;  <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></h3>
 
 						{% endif %}
 					{% endfor %}
@@ -210,7 +207,7 @@
 
 		{% for language in languages %}
 			
-		<h3 style="margin-bottom: 0cm;font-size: 1.5rem"> <img  height="18" width="18" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\bluetick.png" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{language.language_name}} </span></h3>
+		<h3 style="margin-bottom: 0cm;font-size: 1.3rem"> <img height="15" width="15" src="C:/Users/Mokhele katleho/Desktop/resu.me_/Resume_Builder/static/images/icons/bluetick.png" alt=""> &nbsp;  <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{language.language_name}} </span></h3>
 
 			
 			{% empty %}

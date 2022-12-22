@@ -12,7 +12,7 @@
 <table>
 	<tr>
 		<td style="width:47%">
-			<h1 style="margin-bottom: -0.3cm;font-size: 3rem;color: rgb(73, 100, 255); font-weight: 600;" >  {{profile.first_name}}  {{profile.last_name}} </h1> 
+			<h1 style="margin-bottom: -0.3cm;font-size: 2.8rem;color: rgb(73, 100, 255); font-weight: 600;" >  {{profile.first_name}} {{profile.last_name}} </h1> 
 			<h3 style="color:rgb(80, 81, 109);font-size: 1.4rem;margin-top: -0.2cm;margin-bottom: -0.2cm">{{profile.job_title}}  </h3>
 			<br>
 			<br>
@@ -59,8 +59,8 @@
 			
 			{% endif %}
 			
-			<h3 style="margin-bottom: 0cm;font-size: 1.2rem"> phone : <span style="color: rgb(71, 71, 71);font-size: 1rem"> +27 565 8616</span></h3>
-			<h3 style="margin-top: -0.3cm;font-size: 1.2rem"> email : <span style="color: rgb(71, 71, 71);font-size: 1rem"> kmokhele@gmail.com</span></h3>
+			<h3 style="margin-bottom: 0cm;font-size: 1.2rem"> phone : <span style="color: rgb(71, 71, 71);font-size: 1rem">{{profile.cell}}</span></h3>
+			<h3 style="margin-top: -0.3cm;font-size: 1.2rem"> email : <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.email}}</span></h3>
 			
 		</td>
 
@@ -81,8 +81,8 @@
 		<table>
 			<tr>
 				<td style="width:18%">
-					<h6 style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> Aug 2026 -</h6>
-					<h6 style="margin-top: 0cm;font-size: 0.9rem;color:rgb(85, 85, 85);"> Sep 2030 </h6>
+					<h6 style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> {{experience.start_date|date:"M Y" }}  -</h6>
+					<h6 style="margin-top: 0cm;font-size: 0.9rem;color:rgb(85, 85, 85);"> {{experience.end_date|date:"M Y" }}</h6>
 					
 				</td>
 				<td style="width:80%">
@@ -112,8 +112,8 @@
 	<table>
 		<tr>
 			<td style="width:18%">
-				<h6 style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> Aug 2026 -</h6>
-				<h6 style="margin-top: 0cm;font-size: 0.9rem;color:rgb(85, 85, 85);"> Sep 2030 </h6>
+				<h6 style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> {{education.start_date|date:"M Y" }} -</h6>
+				<h6 style="margin-top: 0cm;font-size: 0.9rem;color:rgb(85, 85, 85);">{{education.end_date|date:"M Y" }} </h6>
 				
 			</td>
 			<td style="width:80%">

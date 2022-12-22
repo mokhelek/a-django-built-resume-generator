@@ -210,7 +210,7 @@ def templates_list(request):
     }
     return render(request, 'main_app/template_list.html', context)
 
-@login_required
+
 def link_callback(uri, rel):
 	"""
 	Convert HTML URIs to absolute system paths so xhtml2pdf can access those
@@ -242,7 +242,7 @@ def link_callback(uri, rel):
 			)
 	return path
 
-@login_required
+
 def render_pdf_view(request , profile_id , template_id ):
     profile = Profile.objects.get(id = profile_id)
     choosen_template = PDFTemplate.objects.get(id=template_id)
@@ -281,7 +281,7 @@ def render_pdf_view(request , profile_id , template_id ):
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
-@login_required
+
 def render_pdf_view_test(request , profile_id ):
     profile = Profile.objects.get(id = profile_id)
   

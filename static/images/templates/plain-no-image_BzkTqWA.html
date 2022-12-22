@@ -66,8 +66,8 @@
 	</tr>
 </table>
 
-<h3 style="margin-bottom: 0cm;font-size: 1.2rem"> phone : <span style="color: gray;font-size: 1.2rem"> +27 565 8616</span></h3>
-<h3 style="margin-top: -0.3cm;font-size: 1.2rem"> email : <span style="color: gray;font-size: 1.2rem"> kmokhele@gmail.com</span></h3>
+<h3 style="margin-bottom: 0cm;font-size: 1.2rem"> phone : <span style="color: gray;font-size: 1.2rem"> {{profile.cell}} </span></h3>
+<h3 style="margin-top: -0.3cm;font-size: 1.2rem"> email : <span style="color: gray;font-size: 1.2rem"> {{profile.email}}</span></h3>
 
 <p style="margin-right: 20px;font-size: 1.2rem; width: 70%;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
 	{{profile.bio}}
@@ -79,8 +79,8 @@
 		<table>
 			<tr>
 				<td style="width:18%">
-					<h6 style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> Aug 2026 -</h6>
-					<h6 style="margin-top: 0cm;font-size: 0.9rem;color:rgb(85, 85, 85);"> Sep 2030 </h6>
+					<h6 style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> {{experience.start_date|date:"M Y" }}  -</h6>
+					<h6 style="margin-top: 0cm;font-size: 0.9rem;color:rgb(85, 85, 85);"> {{experience.end_date|date:"M Y" }}  </h6>
 					
 				</td>
 				<td style="width:80%">
@@ -110,12 +110,12 @@
 	<table>
 		<tr>
 			<td style="width:18%">
-				<h6 style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> Aug 2026 -</h6>
-				<h6 style="margin-top: 0cm;font-size: 0.9rem;color:rgb(85, 85, 85);"> Sep 2030 </h6>
+				<h6 style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> {{education.start_date|date:"M Y" }}  -</h6>
+				<h6 style="margin-top: 0cm;font-size: 0.9rem;color:rgb(85, 85, 85);"> {{education.end_date|date:"M Y" }}  </h6>
 				
 			</td>
 			<td style="width:80%">
-				<h2 style="margin-bottom: 0cm;font-size: 1.4rem;"> <strong> {{education.institution_name}}} </strong>  </h2>  
+				<h2 style="margin-bottom: 0cm;font-size: 1.4rem;"> <strong> {{education.institution_name}} </strong>  </h2>  
 				<h4 style="margin-top: 0cm;font-size: 1.1rem;color:rgb(103, 103, 103);" >{{education.qualification_name}}</h4>
 				
 			</td>
