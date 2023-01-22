@@ -43,6 +43,9 @@ def index(request):
             return redirect("main_app:index")
  # *************************************************    End Profile form *********************************************************
 
+
+
+
   # ************************************************* Start Experiences form *********************************************************
     if request.method  != 'POST':
             add_experience_form = ExperiencesForm()
@@ -56,6 +59,12 @@ def index(request):
             return redirect("main_app:index")
  # ************************************************* End Experieces form *********************************************************
 
+
+
+
+
+
+
   # ************************************************* Start  Education form *********************************************************
     if request.method != 'POST':
         add_education_form = EducationForm()
@@ -68,6 +77,8 @@ def index(request):
             add_education_form.save()
             return redirect("main_app:index")
  # ************************************************* End    Education    form *********************************************************
+
+
 
     context = {
         "profile":profile,
@@ -123,6 +134,8 @@ def add_education(request ):
 
 @login_required
 def add_skill(request):
+    x = request.META["HTTP_REFERER"]
+    print(x)
     logged_in_user = Profile.objects.get(user = request.user)
     if request.method != 'POST':
         add_skill_form = SkillForm()
@@ -133,12 +146,8 @@ def add_skill(request):
             new_skill.profile = logged_in_user
             new_skill.save()
             add_skill_form.save()
-            return redirect("main_app:index")
+            return redirect(x)
         
-    context = {
-        "add_skill_form":add_skill_form ,
-        }
-    return render(request, 'main_app/add_education.html', context)
 
 @login_required
 def add_language(request):

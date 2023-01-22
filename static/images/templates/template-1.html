@@ -5,6 +5,12 @@
 		
 			margin: 1cm;
 		}
+
+		p, h1, h2, h3, h4, h5, h6, button, a, li{
+            font-family: "Helvetica" !important ;
+            
+        }
+
 	</style>
 </head>
 
@@ -12,8 +18,8 @@
 <table>
 	<tr>
 		<td style="width:47%">
-			<h1 style="margin-bottom: -0.3cm;font-size: 2.8rem;color: rgb(73, 100, 255); font-weight: 600;" >  {{profile.first_name}} {{profile.last_name}} </h1> 
-			<h3 style="color:rgb(80, 81, 109);font-size: 1.4rem;margin-top: -0.2cm;margin-bottom: -0.2cm">{{profile.job_title}}  </h3>
+			<h1 style="margin-bottom: -0.3cm;font-size: 2.9rem;color: rgb(73, 100, 255); font-weight: 600;" >  {{profile.first_name}} {{profile.last_name}} </h1> 
+			<p style="color:rgb(80, 81, 109);font-size: 1.4rem;margin-top: -0.2cm;margin-bottom: -0.2cm">{{profile.job_title}}  </p>
 			<br>
 			<br>
 		</td>
@@ -24,7 +30,8 @@
 	
 	
 				<a style="text-decoration: none;color:rgb(40, 40, 40)" href="{{profile.github_link}}">
-					<h3 style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\github.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.github_link }}</span></h3>
+					
+					<p style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="static/images/icons/github.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem">&nbsp;{{profile.github_link }}</span></p>
 
 				</a>
 		
@@ -34,7 +41,8 @@
 			{% if profile.linkedin_link  %}
 		
 			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.linkedin_link}}">
-				<h3 style="margin-bottom: 0cm;font-size: 1rem"> <img height="13" width="13" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\linkedin.svg" alt="">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.linkedin_link }}</span></h3>
+				
+				<p style="margin-bottom: 0cm;font-size: 1rem"> <img height="13" width="13" src="static/images/icons/linkedin.svg" alt="">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem">&nbsp;{{profile.linkedin_link }}</span></p>
 
 			</a>
 	
@@ -45,7 +53,8 @@
 		
 				
 			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.twitter_link}}">
-				<h3 style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\twitter.svg" alt="no pic">&nbsp; <span style="font-size: 1rem;color: rgb(71, 71, 71);"> {{profile.twitter_link }}</span></h3>
+				
+				<p style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="static/images/icons/twitter.svg" alt="no pic">&nbsp; <span style="font-size: 1rem;color: rgb(71, 71, 71);">&nbsp;{{profile.twitter_link }}</span></p>
 			</a>
 		
 			{% endif %}
@@ -53,14 +62,15 @@
 	
 			{% if profile.personal_link  %}
 			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.personal_link}}">
-				<h3 style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\globe.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.personal_link }}</span></h3>
+				
+				<p style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="static/images/icons/globe.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem">&nbsp;{{profile.personal_link }}</span></p>
 
 			</a>
 			
 			{% endif %}
 			
-			<h3 style="margin-bottom: 0cm;font-size: 1.2rem"> phone : <span style="color: rgb(71, 71, 71);font-size: 1rem">{{profile.cell}}</span></h3>
-			<h3 style="margin-top: -0.3cm;font-size: 1.2rem"> email : <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.email}}</span></h3>
+			<p style="margin-bottom: 0cm;font-size: 1.2rem;color: gray;"> phone : <span style="color: rgb(42, 42, 42);font-size:1rem " >{{profile.cell}}</span></p>
+			<p style="margin-top: -0.3cm;font-size: 1.2rem; color: gray;"> email : <span style="color: rgb(42, 42, 42);font-size:1rem "> {{profile.email}}</span></p>
 			
 		</td>
 
@@ -71,37 +81,37 @@
 
 <h6 style="color: rgb(135, 153, 254);margin-top: -0.7cm;margin-bottom: 0.6cm;">  ___________________________________________________________________________________________________________________________</h6>
 
-<p style="margin-right: 20px;font-size: 1.2rem; width: 70%;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+<p style="margin-right: 20px;font-size: 1.2rem; width: 70%;" >
 	{{profile.bio}}
 </p>
 	<h1 style="margin-bottom: -0.2cm;font-size: 1.9rem;color: rgb(73, 100, 255)"> <strong>Experience </strong></h1>
 	<h6 style="color: rgb(135, 153, 254);margin-top: -0.7cm;margin-bottom: 0.6cm;">  ___________________________________________________________________________________________________________________________</h6>
 
 	{% for experience in experiences %}
-		<table>
-			<tr>
-				<td style="width:18%">
-					<h6 style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> {{experience.start_date|date:"M Y" }}  -</h6>
-					<h6 style="margin-top: 0cm;font-size: 0.9rem;color:rgb(85, 85, 85);"> {{experience.end_date|date:"M Y" }}</h6>
-					
-				</td>
-				<td style="width:80%">
-					<h2 style="margin-bottom: 0cm;font-size: 1.4rem;"> <strong> {{experience.job_title}} </strong>  </h2>  
-					<h4 style="margin-top: 0cm;font-size: 1.1rem;color:rgb(103, 103, 103);" >{{experience.company_name}}</h4>
-					
-				</td>
-			</tr>
-			<tr>
-				<td style="width:18%">
-					
-					
-				</td>
-				<td style="width:80%">
-					
-					<p style="font-size: 1.2rem;color:rgb(44, 44, 44)">{{experience.job_description}}</p>
-				</td>
-			</tr>
-		</table> 
+	
+	<table>
+		<tr >
+			<td style="width:15%;">
+				<p style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> {{experience.start_date|date:"M Y" }} &nbsp;  - &nbsp; <span style="margin-top: 0cm;font-size: 0.95rem;color:rgb(85, 85, 85);"> {{experience.end_date|date:"M Y" }}  </span></p>
+				<br>
+			</td>
+			<td style="width:73%">
+				<h2 style="margin-bottom: 0cm;font-size: 1.4rem;"> <strong> {{experience.job_title}} </strong>  </h2>  
+				<p style="margin-top: 0cm;font-size: 1.1rem;color:rgb(103, 103, 103);" >{{experience.company_name}}</p>
+				
+			</td>
+		</tr>
+		<tr>
+			<td style="width:18%">
+				
+				
+			</td>
+			<td style="width:80%">
+				
+				<p style="font-size: 1.2rem;color:rgb(44, 44, 44)">{{experience.job_description}}</p>
+			</td>
+		</tr>
+	</table> 
 		<br>
 {% endfor %}
 
@@ -109,30 +119,30 @@
 <h6 style="color: rgb(135, 153, 254);margin-top: -0.7cm;margin-bottom: 0.6cm;">  ___________________________________________________________________________________________________________________________</h6>
 
 {% for education in educations %}
-	<table>
-		<tr>
-			<td style="width:18%">
-				<h6 style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> {{education.start_date|date:"M Y" }} -</h6>
-				<h6 style="margin-top: 0cm;font-size: 0.9rem;color:rgb(85, 85, 85);">{{education.end_date|date:"M Y" }} </h6>
-				
-			</td>
-			<td style="width:80%">
-				<h2 style="margin-bottom: 0cm;font-size: 1.4rem;"> <strong> {{education.institution_name}}</strong>  </h2>  
-				<h4 style="margin-top: 0cm;font-size: 1.1rem;color:rgb(103, 103, 103);" >{{education.qualification_name}}</h4>
-				
-			</td>
-		</tr>
-		<tr>
-			<td style="width:18%">
-				
-				
-			</td>
-			<td style="width:80%">
-				
-				<p style="font-size: 1.2rem;color:rgb(44, 44, 44)">{{education.education_description}}</p>
-			</td>
-		</tr>
-	</table> 
+	
+<table>
+	<tr >
+		<td style="width:15%;">
+			<p style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> {{education.start_date|date:"M Y" }} &nbsp;  - &nbsp; <span style="margin-top: 0cm;font-size: 0.95rem;color:rgb(85, 85, 85);"> {{education.end_date|date:"M Y" }}  </span></p>
+			<br>
+		</td>
+		<td style="width:73%">
+			<h2 style="margin-bottom: 0cm;font-size: 1.4rem;"> <strong> {{education.institution_name}} </strong>  </h2>  
+			<p style="margin-top: 0cm;font-size: 1.1rem;color:rgb(103, 103, 103);" >{{education.qualification_name}}</p>
+			
+		</td>
+	</tr>
+	<tr>
+		<td style="width:18%">
+			
+			
+		</td>
+		<td style="width:80%">
+			
+			<p style="font-size: 1.2rem;color:rgb(44, 44, 44)">{{education.education_description}}</p>
+		</td>
+	</tr>
+</table> 
 	<br>
 {% endfor %}
 
@@ -148,7 +158,7 @@
 					{% for skill in skills %}  
 						{% if forloop.counter|modulo:2 == 1 %}
 					<ul>
-						<li style="font-size: 1.6rem;color:rgb(44, 44, 44)">{{skill.skill_name}}  </li>
+						<li style="font-size: 1.3rem;color:rgb(44, 44, 44)">{{skill.skill_name}}  </li>
 					</ul>
 						{% endif %}
 					{% endfor %}
@@ -162,7 +172,7 @@
 					{% for skill in skills %}  
 						{% if forloop.counter|modulo:2 == 0 %}
 					<ul>
-						<li style="font-size: 1.6rem;color:rgb(44, 44, 44)">{{skill.skill_name}}  </li>
+						<li style="font-size: 1.3rem;color:rgb(44, 44, 44)">{{skill.skill_name}}  </li>
 					</ul>
 						{% endif %}
 					{% endfor %}
@@ -179,7 +189,7 @@
 	<ul>
 		{% for language in languages %}
 			
-				<li style="font-size: 1.6rem;color:rgb(44, 44, 44)"> {{language.language_name}} </li>
+				<li style="font-size: 1.3rem;color:rgb(44, 44, 44)"> {{language.language_name}} </li>
 			
 			{% empty %}
 			no languages yet

@@ -3,19 +3,12 @@
 	<style>
 		@page{
 		
-			margin: 1cm;
+			margin: 0.6cm;
 		}
-	    @font-face {
-            font-family: "poppins";
-            src: url('../static/fonts/poppins/Poppins-Light.otf');
+		p, h1, h2, h3, h4, h5, h6, button, a, li{
+            font-family: "Helvetica" !important ;
+            
         }
-        p{
-            font-family:poppins;
-        }
-		h1, h2, h3, h4, h5, h6 {
-			font-family:poppins;
-			
-		}
 	</style>
 </head>
 
@@ -30,48 +23,53 @@
 		</td>
 		<td style="width:90%;padding-left: 3cm;">
 			
+		
+			
 			{% if profile.github_link  %}
 	
 	
-			<a style="text-decoration: none;color:rgb(40, 40, 40)" href="{{profile.github_link}}">
-				<h3 style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\github.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.github_link }}</span></h3>
+				<a style="text-decoration: none;color:rgb(40, 40, 40)" href="{{profile.github_link}}">
+					
+					<p style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="static/images/icons/github.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem">&nbsp;{{profile.github_link }}</span></p>
+
+				</a>
+		
+			
+			{% endif %}
+	
+			{% if profile.linkedin_link  %}
+		
+			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.linkedin_link}}">
+				
+				<p style="margin-bottom: 0cm;font-size: 1rem"> <img height="13" width="13" src="static/images/icons/linkedin.svg" alt="">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem">&nbsp;{{profile.linkedin_link }}</span></p>
 
 			</a>
 	
+			{% endif %}
+	
+	
+			{% if profile.twitter_link  %}
 		
-		{% endif %}
-
-		{% if profile.linkedin_link  %}
+				
+			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.twitter_link}}">
+				
+				<p style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="static/images/icons/twitter.svg" alt="no pic">&nbsp; <span style="font-size: 1rem;color: rgb(71, 71, 71);">&nbsp;{{profile.twitter_link }}</span></p>
+			</a>
+		
+			{% endif %}
 	
-		<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.linkedin_link}}">
-			<h3 style="margin-bottom: 0cm;font-size: 1rem"> <img height="13" width="13" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\linkedin.svg" alt="">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.linkedin_link }}</span></h3>
-
-		</a>
-
-		{% endif %}
-
-
-		{% if profile.twitter_link  %}
 	
+			{% if profile.personal_link  %}
+			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.personal_link}}">
+				
+				<p style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="static/images/icons/globe.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem">&nbsp;{{profile.personal_link }}</span></p>
+
+			</a>
 			
-		<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.twitter_link}}">
-			<h3 style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\twitter.svg" alt="no pic">&nbsp; <span style="font-size: 1rem;color: rgb(71, 71, 71);"> {{profile.twitter_link }}</span></h3>
-		</a>
-	
-		{% endif %}
-
-
-		{% if profile.personal_link  %}
-		<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.personal_link}}">
-			<h3 style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\globe.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.personal_link }}</span></h3>
-
-		</a>
-		
-		{% endif %}
-		
-		<h3 style="margin-bottom: 0cm;font-size: 1.2rem"> phone : <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.cell}}</span></h3>
-		<h3 style="margin-top: -0.3cm;font-size: 1.2rem"> email : <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{profile.email}}</span></h3>
+			{% endif %}
 			
+			<p style="margin-bottom: 0cm;font-size: 1.2rem;color: gray;"> phone : <span style="color: rgb(42, 42, 42);font-size:1rem " >{{profile.cell}}</span></p>
+			<p style="margin-top: -0.3cm;font-size: 1.2rem; color: gray;"> email : <span style="color: rgb(42, 42, 42);font-size:1rem "> {{profile.email}}</span></p>
 		</td>
 
 
@@ -113,13 +111,13 @@
 		<table>
 			<tr>
 				<td style="width:17% ;">
-					<h6 style="margin-bottom: 0cm;font-size: 1rem;margin-top: 0cm;color:rgb(129, 129, 129);"> {{experience.start_date|date:"M Y" }} - {{experience.end_date|date:"M Y" }}</h6>
+					<p style="margin-bottom: 0cm;font-size: 1rem;margin-top: 0cm;color:rgb(129, 129, 129);"> {{experience.start_date|date:"M Y" }} - {{experience.end_date|date:"M Y" }}</p>
 				<br>
 					
 				</td>
 				<td style="width:80%; border-left: 1px solid  rgb(73, 100, 255);">
 					<h2 style="margin-bottom: 0cm;font-size: 1.4rem;margin-left: 20px;"> <strong> {{experience.job_title}} </strong>  </h2>  
-					<h4 style="margin-top: 0cm;font-size: 1.1rem;color:rgb(103, 103, 103);margin-left: 20px;" >{{experience.company_name}}</h4>
+					<p style="margin-top: 0cm;font-size: 1.1rem;color:rgb(103, 103, 103);margin-left: 20px;" >{{experience.company_name}}</p>
 					
 				</td>
 			</tr>
@@ -144,7 +142,7 @@
 	<table>
 		<tr>
 			<td style="width:17%">
-				<h6 style="margin-bottom: 0cm;font-size: 1rem;margin-top: 0cm;color:rgb(129, 129, 129);"> {{education.start_date|date:"M Y" }} - {{education.end_date|date:"M Y" }}</h6>
+				<p style="margin-bottom: 0cm;font-size: 1rem;margin-top: 0cm;color:rgb(129, 129, 129);"> {{education.start_date|date:"M Y" }} - {{education.end_date|date:"M Y" }}</p>
 				<br>
 				
 			</td>
@@ -180,7 +178,7 @@
 				<td style="width:30%">
 					{% for skill in skills %}  
 						{% if forloop.counter|modulo:2 == 1 %}
-						<h3 style="margin-bottom: 0cm;font-size: 1.3rem">  <img height="15" width="15" src="C:/Users/Mokhele katleho/Desktop/resu.me_/Resume_Builder/static/images/icons/bluetick.png" alt=""> &nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></h3>
+						<p style="margin-bottom: 0cm;font-size: 1.3rem">  <img height="14" width="14" src="static/images/icons/bluetick.png" alt=""> &nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></p>
 
 						{% endif %}
 					{% endfor %}
@@ -190,7 +188,7 @@
 				<td style="width:30%">
 					{% for skill in skills %}  
 						{% if forloop.counter|modulo:2 == 0 %}
-						<h3 style="margin-bottom: 0cm;font-size: 1.3rem"> <img height="15" width="15" src="C:/Users/Mokhele katleho/Desktop/resu.me_/Resume_Builder/static/images/icons/bluetick.png" alt=""> &nbsp;  <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></h3>
+						<p style="margin-bottom: 0cm;font-size: 1.3rem"> <img height="14" width="14" src="static/images/icons/bluetick.png" alt=""> &nbsp;  <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></p>
 
 						{% endif %}
 					{% endfor %}
@@ -207,7 +205,7 @@
 
 		{% for language in languages %}
 			
-		<h3 style="margin-bottom: 0cm;font-size: 1.3rem"> <img height="15" width="15" src="C:/Users/Mokhele katleho/Desktop/resu.me_/Resume_Builder/static/images/icons/bluetick.png" alt=""> &nbsp;  <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{language.language_name}} </span></h3>
+		<h3 style="margin-bottom: 0cm;font-size: 1.3rem"> <img height="14" width="14" src="C:/Users/Mokhele katleho/Desktop/resu.me_/Resume_Builder/static/images/icons/bluetick.png" alt=""> &nbsp;  <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{language.language_name}} </span></h3>
 
 			
 			{% empty %}

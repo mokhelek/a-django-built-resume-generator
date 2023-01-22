@@ -3,8 +3,15 @@
 	<style>
 		@page{
 		
-			margin: 1cm;
+			margin: 0.6cm;
 		}
+
+ 
+        p, h1, h2, h3, h4, h5, h6, button, a, li{
+            font-family: "Helvetica" !important ;
+            
+        }
+
 	</style>
 </head>
 
@@ -12,48 +19,40 @@
 <table>
 	<tr>
 		<td style="width:21%">
-			<img style="border-radius: 10px;" height="140" width="130" class="img-fluid" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\{{profile.avatar}}" alt="no pic">
+			<img style="border-radius: 50%;" height="140" width="140"  src="static\images\{{profile.avatar}}" alt="no pic">
 		</td>
+
 		<td style="width:70%">
-			<h1 style="margin-bottom: -0.6cm;font-size: 2.7rem;color:rgb(33, 33, 33); font-weight: 600;" >  {{profile.first_name}}  {{profile.last_name}} </h1> 
-			<h3 style="color:rgb(103, 103, 103);font-size: 1.5rem;margin-top: -0.4cm;margin-bottom: -0.2cm">{{profile.job_title}}  </h3>
+			<h1 style="margin-bottom: -0.3cm;font-size: 2.7rem;color:rgb(33, 33, 33); font-weight: 600;" >  {{profile.first_name}}  {{profile.last_name}} </h1> 
+			<p style="color:rgb(103, 103, 103);font-size: 1.4rem;margin-top: -0.4cm;margin-bottom: -0.2cm">{{profile.job_title}}  </p>
 			
 			<table style="margin-top: 0cm;">
 				<tr >
 					{% if profile.github_link  %}
 					<td style="width:5%;">
-			
 						<a style="text-decoration: none;color:white;" href="{{profile.github_link}}">
-							.
-							<img height="21" width="21" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\github.svg" alt="">
+							..
+							<img height="16" width="16" style="opacity: 0.8;" src="static/images/icons/github.svg" alt="">
 						</a>
 					</td>
-					{% else %}
-					<td style="width:0.1%;">
-			
-						<a style="text-decoration: none;color:white;" href="{{profile.github_link}}">
-							.
-							
-						</a>
-					</td>
+					
 					{% endif %}
 			
 					{% if profile.linkedin_link  %}
 					<td style="width:5%;">
 						<a style="text-decoration: none;color:white;" href="{{profile.linkedin_link}}">
-							.
-							<img height="20" width="20" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\linkedin.svg" alt="">
+							..
+							<img height="16" width="16" style="opacity: 0.8;" src="static/images/icons/linkedin.svg" alt="">
 						</a>
-			
 					</td>
 					{% endif %}
 			
 			
 					{% if profile.twitter_link  %}
 					<td style="width:5%;">
-						.
 						<a style="text-decoration: none;color:white;" href="{{profile.twitter_link}}">
-							<img height="20" width="20" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\twitter.svg" alt="">
+							..
+							<img height="16" width="16" style="opacity: 0.8;" src="static/images/icons/twitter.svg" alt="">
 						</a>
 					</td>
 					{% endif %}
@@ -62,39 +61,46 @@
 					{% if profile.personal_link  %}
 					<td style="width:5%;">
 						<a style="text-decoration: none;color:white;" href="{{profile.personal_link}}">
-							.
-							<img height="19" width="19" src="C:\Users\Mokhele katleho\Desktop\resu.me_\Resume_Builder\static\images\icons\globe.svg" alt="">
+							..
+							<img height="16" width="16" style="opacity: 0.8;" src="static/images/icons/globe.svg" alt="">
 						</a>
 			
 					</td>
 					{% endif %}
+
 				</tr>
 			</table>
-			<h3 style="margin-bottom: 0cm;font-size: 1.2rem"> phone : <span style="color: gray;font-size: 1.2rem">{{profile.cell}}</span></h3>
-			<h3 style="margin-top: -0.3cm;font-size: 1.2rem"> email : <span style="color: gray;font-size: 1.2rem"> {{profile.email}}</span></h3>
+			<br>
+			<p style="margin-bottom: 0cm;font-size: 1.2rem;color: gray;"> phone : <span style="color: rgb(42, 42, 42);font-size:1rem " >{{profile.cell}}</span></p>
+			<p style="margin-top: -0.3cm;font-size: 1.2rem; color: gray;"> email : <span style="color: rgb(42, 42, 42);font-size:1rem "> {{profile.email}}</span></p>
 			
 		</td>
 	</tr>
 </table>	
 
 
+
 <p style="margin-right: 20px;font-size: 1.2rem; width: 70%;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
 	{{profile.bio}}
 </p>
+
+
+
+
 	<h1 style="margin-bottom: -0.2cm;font-size: 1.9rem;"> <strong>Experience </strong></h1>
 	<h6 style="color: rgb(163, 163, 163);margin-top: -0.7cm;margin-bottom: 0.6cm;">  ___________________________________________________________________________________________________________________________</h6>
 
 	{% for experience in experiences %}
+	
 		<table>
-			<tr>
-				<td style="width:18%">
-					<h6 style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> {{experience.start_date|date:"M Y" }}  -</h6>
-					<h6 style="margin-top: 0cm;font-size: 0.9rem;color:rgb(85, 85, 85);"> {{experience.end_date|date:"M Y" }}  </h6>
-					
+			<tr >
+				<td style="width:15%;">
+					<p style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> {{experience.start_date|date:"M Y" }} &nbsp;  - &nbsp; <span style="margin-top: 0cm;font-size: 0.95rem;color:rgb(85, 85, 85);"> {{experience.end_date|date:"M Y" }}  </span></p>
+					<br>
 				</td>
-				<td style="width:80%">
+				<td style="width:73%">
 					<h2 style="margin-bottom: 0cm;font-size: 1.4rem;"> <strong> {{experience.job_title}} </strong>  </h2>  
-					<h4 style="margin-top: 0cm;font-size: 1.1rem;color:rgb(103, 103, 103);" >{{experience.company_name}}</h4>
+					<p style="margin-top: 0cm;font-size: 1.1rem;color:rgb(103, 103, 103);" >{{experience.company_name}}</p>
 					
 				</td>
 			</tr>
@@ -112,6 +118,17 @@
 		<br>
 {% endfor %}
 
+
+
+
+
+
+
+
+
+
+
+
 <h1 style="margin-bottom: -0.2cm;font-size: 1.9rem;"> <strong>Education </strong></h1>
 <h6 style="color: rgb(163, 163, 163);margin-top: -0.7cm;margin-bottom: 0.6cm;">  ___________________________________________________________________________________________________________________________</h6>
 
@@ -119,13 +136,13 @@
 	<table>
 		<tr>
 			<td style="width:18%">
-				<h6 style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> {{education.start_date|date:"M Y" }}  -</h6>
-				<h6 style="margin-top: 0cm;font-size: 0.9rem;color:rgb(85, 85, 85);"> {{education.end_date|date:"M Y" }}  </h6>
 				
+				<p style="margin-bottom: 0cm;font-size: 0.9rem;margin-top: 0cm;color:rgb(85, 85, 85);"> {{education.start_date|date:"M Y" }} &nbsp;  - &nbsp; <span style="margin-top: 0cm;font-size: 0.95rem;color:rgb(85, 85, 85);"> {{education.end_date|date:"M Y" }}  </span></p>
+				<br>
 			</td>
 			<td style="width:80%">
-				<h2 style="margin-bottom: 0cm;font-size: 1.4rem;"> <strong> {{education.institution_name}} </strong>  </h2>  
-				<h4 style="margin-top: 0cm;font-size: 1.1rem;color:rgb(103, 103, 103);" >{{education.qualification_name}}</h4>
+				<h2 style="margin-bottom: 0cm;font-size: 1.5rem;"> <strong> {{education.institution_name}} </strong>  </h2>  
+				<p style="margin-top: 0cm;font-size: 1.1rem;color:rgb(103, 103, 103);" >{{education.qualification_name}}</p>
 				
 			</td>
 		</tr>
@@ -144,6 +161,19 @@
 {% endfor %}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h1 style="margin-bottom: -0.2cm;font-size: 1.9rem;"> <strong>Skills</strong></h1>
 <h6 style="color: rgb(163, 163, 163);margin-top: -0.7cm;margin-bottom: 0.6cm;">  ___________________________________________________________________________________________________________________________</h6>
 
@@ -155,7 +185,7 @@
 					{% for skill in skills %}  
 						{% if forloop.counter|modulo:2 == 1 %}
 					<ul>
-						<li style="font-size: 1.6rem;color:rgb(44, 44, 44)">{{skill.skill_name}}  </li>
+						<li style="font-size: 1.4rem;color:rgb(44, 44, 44)">{{skill.skill_name}}  </li>
 					</ul>
 						{% endif %}
 					{% endfor %}
@@ -169,7 +199,7 @@
 					{% for skill in skills %}  
 						{% if forloop.counter|modulo:2 == 0 %}
 					<ul>
-						<li style="font-size: 1.6rem;color:rgb(44, 44, 44)">{{skill.skill_name}}  </li>
+						<li style="font-size: 1.3rem;color:rgb(44, 44, 44)">{{skill.skill_name}}  </li>
 					</ul>
 						{% endif %}
 					{% endfor %}
@@ -178,15 +208,13 @@
 		</tr>
 	</table>
 
-
-
 	<h1 style="margin-bottom: -0.2cm;font-size: 1.9rem;"> <strong>Languages</strong></h1>
 	<h6 style="color: rgb(163, 163, 163);margin-top: -0.7cm;margin-bottom: 0.6cm;">  ___________________________________________________________________________________________________________________________</h6>
 	
 	<ul>
 		{% for language in languages %}
 			
-				<li style="font-size: 1.6rem;color:rgb(44, 44, 44)"> {{language.language_name}} </li>
+				<li style="font-size: 1.3rem;color:rgb(44, 44, 44)"> {{language.language_name}} </li>
 			
 			{% empty %}
 			no languages yet
