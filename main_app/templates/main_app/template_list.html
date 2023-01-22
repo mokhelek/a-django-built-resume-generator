@@ -13,7 +13,7 @@
 </style>
 
 
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color:#63f79e19;height:70px;position: relative;box-shadow: 0 0 8px rgb(170, 170, 170);">
+<nav class="navbar navbar-expand-lg fixed-top" style="height:70px;position: relative;box-shadow: 0 0 8px rgb(228, 228, 228);">
     <div class="container-fluid" style="width: 92%;">
       
       {% if user.is_authenticated %}
@@ -116,7 +116,7 @@
         <br>
         <div  class="row">
             {% for template in templates %}
-            <div style="margin-bottom: 20px;" class="col-md-6 col-lg-4      ">
+            <div style="margin-bottom: 20px;" class="col-md-6 col-lg-4   col-6   ">
                 <div class="card card-body" style="box-shadow: 0 0 5px rgb(157, 157, 157);">
                     <div style="height: 12cm;overflow-y:hidden;" class="img-wrapper">
                         <a href="{{template.template_thumbnail.url}}" target="_top">

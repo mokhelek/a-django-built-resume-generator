@@ -62,9 +62,9 @@
   margin-left: 2em;
 }
 
-@media  screen and ( max-width:400px ) {
+@media  screen and ( max-width:500px ) {
     #my_margin{
-        margin: 0.5cm 0.2cm 0.5cm 0.2cm   !important;
+        margin: 0cm !important;
     }
     #summery{
         width: 99%  !important;
@@ -227,16 +227,20 @@
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <div class="modal-header" style="background-color:#78ffae3e;">
+                            <h6 class="modal-title" id="exampleModalLabel">Download with default template?</h6>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                            ...
+                            <div style="height: 400px;overflow:hidden" class="modal-body">
+
+
+                         <img height="60" src="{% static 'images/templates-thumbnails/Screenshot_20221116-044512_Drive.jpg' %}" class="img-fluid" alt="">    
+                               
+
                             </div>
                             <div class="modal-footer">
-                                <a href="{% url 'main_app:pdf_view_test' profile.id %}" type="button" class="btn btn-secondary"> Download </a> 
-                                <a href="{% url 'main_app:templates_list'  %}" type="button" class="btn btn-primary">Pick a Template </a>
+                                <a href="{% url 'main_app:pdf_view_test' profile.id %}" type="button" class="btn btn-outline-secondary btn-sm"> Download </a> 
+                                <a href="{% url 'main_app:templates_list'  %}" type="button" class="btn btn-primary btn-sm">Pick a Template </a>
                             </div>
                         </div>
                         </div>
@@ -246,10 +250,9 @@
 
                     <div class="d-flex">
                         
-                        <button type="button" class="btn-outline-primary btn-sm d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn-outline-primary btn-sm " data-bs-toggle="modal" data-bs-target="#exampleModal">
                             download resume
                         </button> 
-                        <a href="{% url 'main_app:pdf_view_test' profile.id %}" type="button" class="btn btn-secondary"> Download </a> 
                         &nbsp;&nbsp;
                         <a  class="btn btn-primary btn-sm" href="{% url 'main_app:templates_list'  %}" >templates</a>
                     </div>
@@ -317,19 +320,19 @@
                             <div class="col-12">
                             
 
-                                <h3 style="margin-bottom: 0.9rem;"> <b style="color: #00672A;">Summery  </b>
+                                <h4 style="margin-bottom: 0.9rem;margin-top: 15px;"> <b style="color: #00672A;">Summery  </b>
                                 
-                                    <button onclick="personalFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <button onclick="personalFunction()" style="color:#4d77ff;background: none;border: none;font-size: 1rem; font-weight: 500;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                                         </svg>  
                                     </button>
 
                                 </h3>
-                                <div       id="summery"  style="border-left: 4px solid rgba(4, 189, 22, 0.397);background-color: #22ac0012;width: 93%; ">
+                                <div id="summery"  style="border-left: 4px solid rgba(4, 189, 22, 0.397);background-color: #22ac0012;width: 99%; ">
                                 <div  >
-                                    <h6 class="lead" style="font-size: 0.98rem;margin-left: 16px;padding-top: 10px;padding-bottom: 10px;color: #434242d3;">{{profile.bio}} </h6>   
+                                    <h6 class="lead" style="font-size: 0.98rem;margin-left: 16px;margin-right: 6px;padding-top: 10px;padding-bottom: 10px;color: #434242d3;">{{profile.bio}} </h6>   
                                 </div>
                                 
                                 </div>
@@ -340,15 +343,15 @@
                                             
     
                                             <div class="col-lg-11 col-12">
-                                                <h3 style="margin-bottom: 1.2rem;"> <b style="color: #00672A;"> Experience</b> 
+                                                <h4 style="margin-bottom: 1.2rem;"> <b style="color: #00672A;"> Experience</b> 
                                                     <button onclick="experiencesFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                                                         </svg>  
                                                     </button>
                                                 
-                                                </h3>
+                                                </h4>
                                             
                                                 <div class="timeline">
                                                 {% for experience in experiences %}  
@@ -382,16 +385,16 @@
                                     </div>
 
                                     <hr>
-                                    <h3 style="margin-bottom: 1.2rem;"> <b style="color:#00672A;"> Education </b>
+                                    <h4 style="margin-bottom: 1.2rem;"> <b style="color:#00672A;"> Education </b>
                                             <span>
                                                 <button onclick="educationFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                                         <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                                                     </svg>  
                                                 </button>
                                             </span>
-                                </h3>
+                                </h4>
                                 
                                 <div class="row">
                                     {% for education in educations %} 
@@ -428,7 +431,7 @@
                         <h4> <b style="color:#00672A;"> Skills</b>
                         
                             <button onclick="skillsFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                                 </svg>  
@@ -455,7 +458,7 @@
                     <div class="col-12 col-md-6  ">
                         <h4> <b style="color:#00672A;"> Languages </b>
                             <button onclick="languagesFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                                 </svg>  
