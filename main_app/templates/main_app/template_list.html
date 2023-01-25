@@ -13,18 +13,16 @@
 </style>
 
 
-<nav class="navbar navbar-expand-lg fixed-top" style="height:70px;position: relative;box-shadow: 0 0 8px rgb(228, 228, 228);">
+<nav class="navbar navbar-expand-lg fixed-top" style="height:60px;position: relative;box-shadow: 0 0 8px rgb(228, 228, 228);">
     <div class="container-fluid" style="width: 92%;">
       
       {% if user.is_authenticated %}
-      <a class="navbar-brand d-flex" href="{% url 'main_app:index' %}">
-      &nbsp;<h1 style="color:#00672A;font-weight:600;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" >resu.</h1> 
-      <h1 style="color: rgb(53, 124, 255);font-weight:600;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">me_</h1>  &nbsp;
+      <a class="navbar-brand d-flex" href="{% url 'main_app:index' %}">  
+      <img   style="width:160px" src="{% static 'images/icons/logo-dark.png'  %}" alt="">
     </a>
     {% else %}
     <a class="navbar-brand d-flex" href="{% url 'main_app:landing_page' %}">
-        &nbsp;<h1 style="color:#00672A;font-weight:600;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" >resu.</h1> 
-        <h1 style="color: rgb(53, 124, 255);font-weight:600;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">me_</h1>  &nbsp;
+        <img   style="width:160px" src="{% static 'images/icons/logo-dark.png'  %}" alt="">
       </a>
     {% endif %}
 
@@ -116,7 +114,7 @@
         <br>
         <div  class="row">
             {% for template in templates %}
-            <div style="margin-bottom: 20px;" class="col-md-6 col-lg-4   col-6   ">
+            <div style="margin-bottom: 20px;" class="col-md-6 col-lg-4   col-6    ">
                 <div class="card card-body" style="box-shadow: 0 0 5px rgb(157, 157, 157);">
                     <div style="height: 12cm;overflow-y:hidden;" class="img-wrapper">
                         <a href="{{template.template_thumbnail.url}}" target="_top">

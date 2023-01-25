@@ -19,8 +19,8 @@ urlpatterns = [
     path("delete-languages/<int:language_id>/", views.delete_language, name="delete_language"),
     
     # adding
-    #path("add-experience/",views.add_experience, name = "add_experience"),
-    #path("add-education/",views.add_education, name = "add_education"),
+    path("add-experience/",views.add_experience, name = "add_experience"),
+    path("add-education/",views.add_education, name = "add_education"),
     path("add-skills/",views.add_skill, name = "add_skill"),
     path("add-languages/",views.add_language, name = "add_language"),
     path("templates-list/",views.templates_list, name = "templates_list"),

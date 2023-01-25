@@ -1,0 +1,79 @@
+
+
+{% extends "main_app/base.html" %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+   
+    <div class="row">
+        <div class="col-md-4 col-lg-3" id="personal_info_container">
+            {% include 'main_app/sidebar.html' %}
+
+
+        </div>
+
+        <div class="col-md-8 col-lg-9" style="background-color: #ffffff85;">
+
+            <div class="container">
+                <div   id="my_margin" style="margin: 0.5cm 1cm 1cm 1cm;" >
+                    <h5><b>Skills</b></h5>
+                    <hr>
+    
+                    <form  action="{% url 'main_app:add_skill' %}" action="#" method="post">
+                    <div class="row">
+                        <div class="col-7   col-md-5    col-lg-4">
+                            {% csrf_token %}
+                            {% bootstrap_form add_skill_form %}
+                        </div>
+                        <div class="col-5   col-md-3 col-lg-2">
+                            <button onclick="skillsFunction()" class="btn btn-success " name="submit">add</button>
+                        </div>
+                    </div> 
+    
+                    </form>
+
+                    <div class="col-12  col-md-11   col-lg-9">
+                        <div class="row">
+                            {% for skill in skills %}
+                            <div class="col-6   col-md-4    col-lg-3" style="margin-bottom: 0.7rem;">
+                                <div class="d-flex" > 
+                                    <h6 class="btn btn-outline-success btn-sm rounded-pill">
+                                    {{skill.skill_name}}  <a style="text-decoration: none;color: #00672A;" href="{% url 'main_app:delete_skill' skill.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                                    </svg> </a>
+                                    </h6>  
+                                </div> 
+                            </div>
+                            {% empty %}
+                                no skills yet
+                            {% endfor %}
+                        </div>
+                    </div>
+                
+  
+            
+                </div>
+            </div>
+          
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+ 
+                

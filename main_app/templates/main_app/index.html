@@ -5,81 +5,6 @@
 
 {% block content %}
 
-<head>
-<style>
-    #details-option:hover {
-        width: 105% !important;
-       
-        background-color: rgba(9, 255, 0, 0.386) !important;
-    }
-
-.timeline-wrapper {
-  position: relative;
-  
-}
-.timeline-wrapper:last-child:before {
-  height: 0;
-}
-.timeline-wrapper:before {
-  content: "";
-  background: #00672A;
-  width: 1.4px;
-  height: 100%;
-  position: absolute;
-  left: 11px;
-}
-
-.timeline-yr {
-  background: #deffd7;
-  border: 2px solid #00672A;
-  border-radius: 100%;
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  line-height: 50px;
-  text-align: center;
-}
-.timeline-yr span {
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: bold;
-  display: block;
-  line-height: 42px;
-}
-
-.timeline-info {
-  display: inline-block;
-  vertical-align: top;
-  max-width: 100%  !important;
-  margin-left: 2em;
-}
-.timeline-info small {
-  color: #eeeeee;
-  font-size: 40px;
-  font-weight: bold !important;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 2em;
-}
-
-@media  screen and ( max-width:500px ) {
-    #my_margin{
-        margin: 0cm !important;
-    }
-    #summery{
-        width: 99%  !important;
-    }
-    #education_card{
-        height:fit-content    !important;
-    }
-}
-
-
-</style>
-  
-</head>
-
-
 
 <div class="container-fluid" style="width: 100%;">
 
@@ -88,7 +13,8 @@
   <section >
   
         <div class="row">
-            <div class="col-md-4   col-lg-3 "  style="background-color: rgba(1, 80, 0, 0.184) !important;box-shadow: 4px 0 8px rgb(50, 50, 50); ;">
+            
+            <div class="col-md-4   col-lg-3 " id="personal_info_container" >
 
                 <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                     <div class="offcanvas-header">
@@ -96,22 +22,22 @@
                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <h6 style="margin-right: 1rem;">  <a  style="text-decoration: none;" href="{% url 'main_app:index' %}"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                        <h6  >  <a   href="{% url 'main_app:index' %}"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
                             <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
                           </svg> &nbsp; &nbsp; Home </a>
                          </h6>
         
-                        <h6 style="margin-right: 1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                        <h6 ><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-                          </svg>  <a style="text-decoration: none;" href="{%    url 'main_app:landing_page' %}">  &nbsp; &nbsp; About </a> 
+                          </svg>  <a  href="{%    url 'main_app:landing_page' %}">  &nbsp; &nbsp; About </a> 
                          </h6> 
         
                             
-                        <h6 style="margin-right: 1rem;"> <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                        <h6  > <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
                             <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-                          </svg> <a style="text-decoration: none;" href="{%   url 'profiles_app:logout'  %}">  &nbsp; &nbsp; Logout</a> 
+                          </svg> <a  href="{%   url 'profiles_app:logout'  %}">  &nbsp; &nbsp; Logout</a> 
                          </h6>
 
 
@@ -124,9 +50,9 @@
 
 
                         <div class="col-8">
-                            <a  class="d-flex   justify-content-start"    style="text-decoration: none;" href="{% url 'main_app:index' %}">
-                                <h2 style="font-weight:800; padding-left: 15px;color: #00672A;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">  resu<span style="color:rgb(60, 60, 255);">.me_  </span>   </h2>  
-                                </a>
+                            <a  class="d-flex   justify-content-start"    style="text-decoration: none;margin-top: 15px;" href="{% url 'main_app:index' %}">
+                                <img   style="width:130px" src="{% static 'images/icons/logo-dark.png'  %}" alt="">
+                            </a>
                         </div>
 
                         <div class="col-4      d-md-none ">
@@ -374,7 +300,7 @@
                                                         <br>
                                                         <img style="width: 25%;height: auto;" src="{% static 'images/illustrations/undraw_no_data_re_kwbl.svg' %}" alt="">
                                                         <br><br>
-                                                        <a href="#" onclick="addExperiencesFunction()" class="btn btn-success">Add Experience</a>
+                                                        <a href="{% url 'main_app:add_experience' %}"  class="btn btn-success">Add Experience</a>
                                                     </center>
                                                     {% endfor %}
                                             </div>
@@ -415,7 +341,7 @@
                                                 <br>
                                                 <img style="width: 25%;height: auto;" src="{% static 'images/illustrations/undraw_no_data_re_kwbl.svg' %}" alt="">
                                                 <br><br>
-                                                <a href="#" onclick="addEducationFunction()" class="btn btn-success">Add Education</a>
+                                                <a href="{% url 'main_app:add_education' %}" class="btn btn-success">Add Education</a>
                                                 <br><br>
                                             </center>
                                             {% endfor %}
@@ -430,12 +356,12 @@
                     <div id="skill_list" class="col-12  col-md-6 ">
                         <h4> <b style="color:#00672A;"> Skills</b>
                         
-                            <button onclick="skillsFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
+                            <a href="{% url 'main_app:add_skill' %}" class="btn" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                                 </svg>  
-                            </button>
+                            </a>
 
                         </h4>
                         <hr>
@@ -457,12 +383,12 @@
                     </div>
                     <div class="col-12 col-md-6  ">
                         <h4> <b style="color:#00672A;"> Languages </b>
-                            <button onclick="languagesFunction()" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
+                            <a href="{% url 'main_app:add_language' %}" class="btn" style="color:#1349fa;background: none;border: none;font-size: 1rem; font-weight: 500;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                                 </svg>  
-                            </button>
+                            </a>
                         
                         </h4>
                         <hr>
@@ -493,23 +419,32 @@
 
                 </div>
 
-                <div id="personal_info" style="border: 1px solid rgba(0, 128, 0, 0.501);border-radius: 10px;background-color: rgba(0, 128, 0, 0.104);display: none;">
-                    <form style="margin: 0.8cm;" enctype="multipart/form-data" action="{% url 'main_app:index' %}" method="post">
-                        {% csrf_token %}
-                        {% bootstrap_form personal_info_form %}
-                        <button class="btn btn-success btn-sm" name="submit">Save</button>
-                    </form>
+                <div id="personal_info" style="border: 1px solid rgba(0, 128, 0, 0.17);border-radius: 5px;background-color: rgba(158, 255, 158, 0.104);display: none;">
+                    
+
+                   
+
+                    <div>
+                        <form style="margin: 0.8cm;" enctype="multipart/form-data" action="{% url 'main_app:index' %}" method="post">
+                            {% csrf_token %}
+                            {% bootstrap_form personal_info_form %}
+                           
+                            <button class="btn btn-success btn-sm" name="submit">Save</button>
+                        </form>
+                    </div>
+
+                   
                 </div>
             
                 <div id="experiences" style="display: none;">
                     <div style="display: flex;">
                         <h3> <b style="color:#00672A;"> Experience </b> </h3>
-                            &nbsp; &nbsp;
-                            <button onclick="addExperiencesFunction()" style="color:#1349fa;background: none;border: none;">
+                            &nbsp;
+                            <a href="{% url 'main_app:add_experience' %}" class="btn" style="color:#1349fa;background: none;border: none;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="23" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
                                     </svg>
-                            </button>
+                            </a>
 
                     
                     </div>
@@ -554,12 +489,12 @@
                 <div id="education" style="display: none;">
                     <div style="display: flex;">
                         <h3> <b style="color:#00672A;"> Education </b> </h3>
-                            &nbsp; &nbsp;
-                            <button onclick="addEducationFunction()" style="color:#1349fa;background: none;border: none;">
+                            &nbsp;
+                            <a href="{% url 'main_app:add_education' %}" class="btn"  style="color:#1349fa;background: none;border: none;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="23" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
                                     </svg>
-                            </button>
+                            </a>
 
                     
                     </div>
@@ -595,116 +530,7 @@
                     </div>
                 </div>
 
-                <div id="skills" style="display: none;">
-                    <h5><b>Skills</b></h5>
-                    <hr>
-    
-                    <form  action="{% url 'main_app:add_skill' %}" action="#" method="post">
-                    <div class="row">
-                        <div class="col-7   col-md-5    col-lg-4">
-                            {% csrf_token %}
-                            {% bootstrap_form add_skill_form %}
-                        </div>
-                        <div class="col-5   col-md-3 col-lg-2">
-                            <button onclick="skillsFunction()" class="btn btn-success " name="submit">add</button>
-                        </div>
-                    </div> 
-    
-                    </form>
-
-                    <div class="col-12  col-md-11   col-lg-9">
-                        <div class="row">
-                            {% for skill in skills %}
-                            <div class="col-6   col-md-4    col-lg-3" style="margin-bottom: 0.7rem;">
-                                <div class="d-flex" > 
-                                    <h6 class="btn btn-outline-success btn-sm rounded-pill">
-                                    {{skill.skill_name}}  <a style="text-decoration: none;color: #00672A;" href="{% url 'main_app:delete_skill' skill.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                                    </svg> </a>
-                                    </h6>  
-                                </div> 
-                            </div>
-                            {% empty %}
-                                no skills yet
-                            {% endfor %}
-                        </div>
-                    </div>
-                
-                    
-                    
-                        
-                
-    
-                </div>
-            
-                <div id="languages" style="display: none;">
-                    <h5><b>Languages</b></h5>
-                    <hr>
-                    <form  action="{% url 'main_app:add_language' %}"  method="post">
-                        <div class="row">
-                            <div class="col-7   col-md-5    col-lg-4">
-                            {% csrf_token %}
-                            {% bootstrap_form add_language_form %}
-                            </div>
-                            <div class="col-5   col-md-3 col-lg-2">
-                            <button class="btn btn-success " name="submit">add</button>
-                        </div>
-                        </div> 
-    
-                    </form>
-                
-                        
-                
-                    
-                    <div class="col-12  col-md-11   col-lg-9">
-                        <div class="row">
-                            {% for language in languages %}
-                            <div class="col-6   col-md-4    col-lg-3" style="margin-bottom: 0.7rem;">
-                                <div class="d-flex" > 
-                                    <h6 class="btn btn-outline-success btn-sm rounded-pill">
-                                    {{language.language_name}}  <a style="text-decoration: none;color: #00672A;" href="{% url 'main_app:delete_language' language.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                                        </svg> </a>
-                                    </h6>  
-                                </div> 
-                            </div>
-                            {% empty %}
-                                no languages yet
-                            {% endfor %}
-                        </div>
-                    </div>
-                    
-                        
-                    
-                </div>
-
-
-                <div id="add_experience"   style="display: none;">
-                    <h3>   <b>  Add Experience </b></h3>
-                    <div class="container">
-                        <br>
-                        <form action="#" method="post" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            {% bootstrap_form add_experience_form %}
-                            <button class="btn btn-success btn-sm" name="submit">add</button>
-                        </form>
-                    </div>
-                </div>
-
-
-                <div    id="add_education"   style="display: none;">
-                    <h3>   <b>  Add Education </b></h3>
-                    <div class="container">
-                        <br>
-                        <form action="#" method="post" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            {% bootstrap_form add_education_form %}
-                            <button class="btn btn-success btn-sm" name="submit">add</button>
-                        </form>
-                    </div>
-                </div>
-                
-
+   
                 </div>
             </div>
 
@@ -714,199 +540,7 @@
 
   </section>
 
-  <script>
-
-
-        function full_detailsFunction(){
-            let full_details = document.getElementById("full_details")
-            let personal_info = document.getElementById("personal_info")
-            let experiences = document.getElementById("experiences")
-            let education = document.getElementById("education")
-            let skills = document.getElementById("skills")
-            let add_experience= document.getElementById("add_experience")
-            let languages = document.getElementById("languages") 
-            let add_education   =   document.getElementById("add_education")
-
-            if (full_details.style.display=="none"){
-                full_details.style.display = "block"
-                languages.style.display = "none"
-                add_experience.style.display = 'none'
-                skills.style.display = 'none'
-                education.style.display = 'none'
-                experiences.style.display = 'none'
-                personal_info.style.display = "none"
-                add_education.style.display = "none"
-                
-                }
-        }
-
-        function personalFunction(){
-            let full_details = document.getElementById("full_details")
-            let personal_info = document.getElementById("personal_info")
-            let experiences = document.getElementById("experiences")
-            let education = document.getElementById("education")
-            let skills = document.getElementById("skills")
-           let add_experience = document.getElementById("add_experience")
-            let languages = document.getElementById("languages")
-            let add_education   =   document.getElementById("add_education")
-
-            if (personal_info.style.display=="none"){
-                personal_info.style.display = "block"
-                experiences.style.display = 'none'
-                education.style.display = 'none'
-                skills.style.display = 'none'
-                add_experience.style.display = 'none'
-                languages.style.display = "none"
-                full_details.style.display = "none"
-                add_education.style.display = "none"
-            }
-
-        }
-
-        function experiencesFunction(){
-            let full_details = document.getElementById("full_details")
-            let personal_info = document.getElementById("personal_info")
-            let experiences = document.getElementById("experiences")
-            let education = document.getElementById("education")
-            let skills = document.getElementById("skills")
-            let add_experience= document.getElementById("add_experience")
-            let languages = document.getElementById("languages")
-            let add_education   =   document.getElementById("add_education")
-
-            if (experiences.style.display=="none"){
-                experiences.style.display = 'block'
-                personal_info.style.display = "none"
-                education.style.display = 'none'
-                skills.style.display = 'none'
-               add_experience.style.display = 'none'
-                languages.style.display = "none"
-                full_details.style.display = "none"
-                add_education.style.display = "none"
-                }
-        }
-
-
-
-        function addExperiencesFunction(){
-            let full_details = document.getElementById("full_details")
-            let personal_info = document.getElementById("personal_info")
-            let experiences = document.getElementById("experiences")
-            let education = document.getElementById("education")
-            let skills = document.getElementById("skills")
-            let add_experience= document.getElementById("add_experience")
-            let languages = document.getElementById("languages")
-            let add_education   =   document.getElementById("add_education")
-
-            if (add_experience.style.display=="none"){
-                add_experience.style.display = 'block'
-                personal_info.style.display = "none"
-                education.style.display = 'none'
-                skills.style.display = 'none'
-               experiences.style.display = 'none'
-                languages.style.display = "none"
-                full_details.style.display = "none"
-                add_education.style.display = "none"
-                }
-        }
-
-  function addEducationFunction(){
-            let full_details = document.getElementById("full_details")
-            let personal_info = document.getElementById("personal_info")
-            let experiences = document.getElementById("experiences")
-            let education = document.getElementById("education")
-            let skills = document.getElementById("skills")
-            let add_experience= document.getElementById("add_experience")
-            let languages = document.getElementById("languages") 
-            let add_education   =   document.getElementById("add_education")
-
-            if (add_education.style.display=="none"){
-                full_details.style.display = "none"
-                languages.style.display = "none"
-                add_experience.style.display = 'none'
-                skills.style.display = 'none'
-                education.style.display = 'none'
-                experiences.style.display = 'none'
-                personal_info.style.display = "none"
-                add_education.style.display = "block"
-                
-                }
-        }
-
-
-        function educationFunction(){
-            let full_details = document.getElementById("full_details")
-            let personal_info = document.getElementById("personal_info")
-            let experiences = document.getElementById("experiences")
-            let education = document.getElementById("education")
-            let skills = document.getElementById("skills")
-            let add_experience = document.getElementById("add_experience")
-            let languages = document.getElementById("languages")
-            let add_education   =   document.getElementById("add_education")
-            
-
-            if (education.style.display=="none"){
-                education.style.display = 'block'
-                experiences.style.display = 'none'
-                personal_info.style.display = "none"
-                skills.style.display = 'none'
-                add_experience.style.display = 'none'
-                languages.style.display = "none"
-                full_details.style.display = "none"
-                add_education.style.display = "none"
-                }
-        }
-
-        function skillsFunction(){
-            let full_details = document.getElementById("full_details")
-            let personal_info = document.getElementById("personal_info")
-            let experiences = document.getElementById("experiences")
-            let education = document.getElementById("education")
-            let skills = document.getElementById("skills")
-           let add_experience = document.getElementById("add_experience")
-            let languages = document.getElementById("languages")
-            let add_education   =   document.getElementById("add_education")
-
-            if (skills.style.display=="none"){
-                skills.style.display = 'block'
-                education.style.display = 'none'
-                experiences.style.display = 'none'
-                personal_info.style.display = "none"
-                add_experience.style.display = 'none'
-                languages.style.display = "none"
-                full_details.style.display = "none"
-                add_education.style.display = "none"
-                }
-        }
-
-    
-
-        function languagesFunction(){
-            let full_details = document.getElementById("full_details")
-            let personal_info = document.getElementById("personal_info")
-            let experiences = document.getElementById("experiences")
-            let education = document.getElementById("education")
-            let skills = document.getElementById("skills")
-            let add_experience = document.getElementById("add_experience")
-            let languages = document.getElementById("languages")
-            let add_education   =   document.getElementById("add_education")
-
-            if (languages.style.display=="none"){
-                languages.style.display = "block"
-                add_experience.style.display = 'none'
-                skills.style.display = 'none'
-                education.style.display = 'none'
-                experiences.style.display = 'none'
-                personal_info.style.display = "none"
-                full_details.style.display = "none"
-                add_education.style.display = "none"
-                
-                }
-        }
-       
-       
-
-
-  </script>
+  <script src="{% static 'js/index.js' %}"></script>
 </body>
 </div>
 

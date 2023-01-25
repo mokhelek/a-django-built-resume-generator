@@ -1,0 +1,76 @@
+
+#personal_info_container{
+    background-color: rgba(1, 80, 0, 0.184) !important;
+    box-shadow: 4px 0 8px rgb(50, 50, 50); 
+}
+
+.offcanvas-body h3 {
+    margin-right: 1rem;
+}
+
+#details-option:hover {
+    width: 105% !important;
+   
+    background-color: rgba(9, 255, 0, 0.386) !important;
+}
+
+.timeline-wrapper {
+position: relative;
+
+}
+.timeline-wrapper:last-child:before {
+height: 0;
+}
+.timeline-wrapper:before {
+content: "";
+background: #00672A;
+width: 1.4px;
+height: 100%;
+position: absolute;
+left: 11px;
+}
+
+.timeline-yr {
+background: #deffd7;
+border: 2px solid #00672A;
+border-radius: 100%;
+position: absolute;
+width: 22px;
+height: 22px;
+line-height: 50px;
+text-align: center;
+}
+.timeline-yr span {
+color: #ffffff;
+font-size: 16px;
+font-weight: bold;
+display: block;
+line-height: 42px;
+}
+
+.timeline-info {
+display: inline-block;
+vertical-align: top;
+max-width: 100%  !important;
+margin-left: 2em;
+}
+.timeline-info small {
+color: #eeeeee;
+font-size: 40px;
+font-weight: bold !important;
+display: inline-block;
+vertical-align: middle;
+margin-left: 2em;
+}
+
+@media  screen and ( max-width:500px ) {
+#my_margin{
+    margin: 0cm !important;
+}
+#summery{
+    width: 99%  !important;
+}
+#education_card{
+    height:fit-content    !important;
+}
+}

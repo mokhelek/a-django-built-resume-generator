@@ -1,0 +1,37 @@
+{% extends "main_app/base.html" %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+   
+    <div class="row">
+        <div class="col-md-4 col-lg-3" id="personal_info_container">
+            {% include 'main_app/sidebar.html' %}
+
+
+        </div>
+
+        <div class="col-md-8 col-lg-9" style="background-color: #ffffff85;">
+
+            <div class="container">
+                <div   id="my_margin" style="margin: 0.5cm 1cm 1cm 1cm;" >
+                <h4>Edit Education</h4>
+                <br>
+                <form action="{% url 'main_app:education' education.id %}" method="post">
+                    {% csrf_token %}
+                    {% bootstrap_form education_form %}
+                    <button class="btn btn-success btn-sm" name="submit">Save</button>
+                </form>
+                </div>
+            </div>
+          
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock content %}

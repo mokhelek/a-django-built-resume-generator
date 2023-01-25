@@ -18,17 +18,17 @@ class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE ,default=1 ) # this has the username inside
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
-    job_title = models.CharField(max_length=200)
+    job_title = models.CharField(max_length=200,default="")
     email = models.EmailField()
-    cell = models.CharField(max_length=15,null=True, blank=True)
-    bio = models.TextField( default=" write a short summery here ")
+    cell = models.CharField(max_length=15,null=True, default="-")
+    bio = models.TextField( default=" write your professional summery here ")
     avatar = models.ImageField(null=True, upload_to="avatars", blank=True , default='default.png')
     gender_choice = (
         ("male", "Male"),
         ("Female", "Female"),
     )
-    gender = models.CharField(choices=gender_choice, max_length=10)
-    location = models.CharField(max_length=300)
+    #gender = models.CharField(choices=gender_choice, max_length=10)
+    location = models.CharField(max_length=300, default="-")
     linkedin_link = models.URLField(null=True, blank=True)
     twitter_link = models.URLField(null=True, blank=True)
     github_link = models.URLField(null=True, blank=True)

@@ -30,7 +30,7 @@
 	
 				<a style="text-decoration: none;color:rgb(40, 40, 40)" href="{{profile.github_link}}">
 					
-					<p style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="static/images/icons/github.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem">&nbsp;{{profile.github_link }}</span></p>
+					<p style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="/home/resumebuildersite/a-django-built-resume-generator/static/images/icons/github.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem">&nbsp;{{profile.github_link }}</span></p>
 
 				</a>
 		
@@ -41,7 +41,7 @@
 		
 			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.linkedin_link}}">
 				
-				<p style="margin-bottom: 0cm;font-size: 1rem"> <img height="13" width="13" src="static/images/icons/linkedin.svg" alt="">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem">&nbsp;{{profile.linkedin_link }}</span></p>
+				<p style="margin-bottom: 0cm;font-size: 1rem"> <img height="13" width="13" src="/home/resumebuildersite/a-django-built-resume-generator/static/images/icons/linkedin.svg" alt="">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem">&nbsp;{{profile.linkedin_link }}</span></p>
 
 			</a>
 	
@@ -53,7 +53,7 @@
 				
 			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.twitter_link}}">
 				
-				<p style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="static/images/icons/twitter.svg" alt="no pic">&nbsp; <span style="font-size: 1rem;color: rgb(71, 71, 71);">&nbsp;{{profile.twitter_link }}</span></p>
+				<p style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="/home/resumebuildersite/a-django-built-resume-generator/static/images/icons/twitter.svg" alt="no pic">&nbsp; <span style="font-size: 1rem;color: rgb(71, 71, 71);">&nbsp;{{profile.twitter_link }}</span></p>
 			</a>
 		
 			{% endif %}
@@ -62,7 +62,7 @@
 			{% if profile.personal_link  %}
 			<a style="text-decoration: none;color:rgb(40, 40, 40);" href="{{profile.personal_link}}">
 				
-				<p style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="static/images/icons/globe.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem">&nbsp;{{profile.personal_link }}</span></p>
+				<p style="margin-bottom: 0cm;font-size: 1rem"> <img  height="13" width="13" src="/home/resumebuildersite/a-django-built-resume-generator/static/images/icons/globe.svg" alt="no pic">&nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem">&nbsp;{{profile.personal_link }}</span></p>
 
 			</a>
 			
@@ -178,7 +178,7 @@
 				<td style="width:30%">
 					{% for skill in skills %}  
 						{% if forloop.counter|modulo:2 == 1 %}
-						<p style="margin-bottom: 0cm;font-size: 1.3rem">  <img height="14" width="14" src="static/images/icons/bluetick.png" alt=""> &nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></p>
+						<p style="margin-bottom: 0cm;font-size: 1.3rem">  <img height="14" width="14" src="/home/resumebuildersite/a-django-built-resume-generator/static/images/icons/bluetick.png" alt=""> &nbsp; <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></p>
 
 						{% endif %}
 					{% endfor %}
@@ -188,7 +188,7 @@
 				<td style="width:30%">
 					{% for skill in skills %}  
 						{% if forloop.counter|modulo:2 == 0 %}
-						<p style="margin-bottom: 0cm;font-size: 1.3rem"> <img height="14" width="14" src="static/images/icons/bluetick.png" alt=""> &nbsp;  <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></p>
+						<p style="margin-bottom: 0cm;font-size: 1.3rem"> <img height="14" width="14" src="/home/resumebuildersite/a-django-built-resume-generator/static/images/icons/bluetick.png" alt=""> &nbsp;  <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{skill.skill_name}} </span></p>
 
 						{% endif %}
 					{% endfor %}
@@ -205,7 +205,7 @@
 
 		{% for language in languages %}
 			
-		<h3 style="margin-bottom: 0cm;font-size: 1.3rem"> <img height="14" width="14" src="C:/Users/Mokhele katleho/Desktop/resu.me_/Resume_Builder/static/images/icons/bluetick.png" alt=""> &nbsp;  <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{language.language_name}} </span></h3>
+		<h3 style="margin-bottom: 0cm;font-size: 1.3rem"> <img height="14" width="14" src="/home/resumebuildersite/a-django-built-resume-generator/static/images/icons/bluetick.png" alt=""> &nbsp;  <span style="color: rgb(71, 71, 71);font-size: 1rem"> {{language.language_name}} </span></h3>
 
 			
 			{% empty %}

@@ -17,14 +17,29 @@ class SignUpForm(UserCreationForm):
         
         
 class ProfileForm(ModelForm):
-    bio = forms.CharField(widget=forms.Textarea , label='Summery')
+    #bio = forms.CharField(widget=forms.Textarea , label='Summery')
     
     class Meta:
         model = Profile
         fields = '__all__'
-        exclude = ['user']
+        exclude = ("user","avatar", )
+        widgets = {
+            'bio':forms.Textarea(attrs={'class':'summery_class','label':'Summery'}) ,
+            'first_name':forms.TextInput(attrs={'class':'firstname_class'}) ,
+            'last_name':forms.TextInput(attrs={'class':'lastname_class'}) ,
+            #'bio':forms.Textarea(attrs={'class':'summery_class'}) ,
+        }
   
   
+class AvatarForm(ModelForm):
+
+    class Meta:
+        model = Profile
+        fields = ("avatar",)
+       
+  
+  
+
 class ExperiencesForm(ModelForm):
     start_date = forms.DateField(widget = forms.widgets.DateInput(attrs={'type':'date','rows':1 ,'columns':2}))
     end_date = forms.DateField(widget = forms.widgets.DateInput(attrs={'type':'date','rows':1 ,'columns':2}))

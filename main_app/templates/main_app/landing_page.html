@@ -36,13 +36,11 @@
       
       {% if user.is_authenticated %}
       <a class="navbar-brand d-flex" href="{% url 'main_app:index' %}">
-      &nbsp;<h1 style="color:white;font-weight:600;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" >resu.</h1> 
-      <h1 style="color: rgb(106, 158, 255);font-weight:600;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">me_</h1>  &nbsp;
+        <img   style="width:160px" src="{% static 'images/icons/logo-light.png'  %}" alt="">
     </a>
     {% else %}
-    <a class="navbar-brand d-flex" href="{% url 'main_app:landing_page' %}">
-        &nbsp;<h1 style="color:white ;font-weight:600;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" >resu.</h1> 
-        <h1 style="color: rgb(106, 158, 255);font-weight:600;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">me_</h1>  &nbsp;
+    <a class="navbar-brand" href="{% url 'main_app:landing_page' %}">
+        <img   style="width:160px" src="{% static 'images/icons/logo-light.png'  %}" alt="">
       </a>
     {% endif %}
 

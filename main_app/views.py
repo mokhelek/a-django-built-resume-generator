@@ -27,15 +27,15 @@ def index(request):
     profile = Profile.objects.get(user=request.user)
     experiences = Experience.objects.filter(profile = profile)[::-1]
     educations = Education.objects.filter(profile = profile)[::-1]
-    skills = Skills.objects.filter(profile = profile)[::-1]
+    skills = Skills.objects.filter(profile__user = request.user)[::-1]
     languages = Languages.objects.filter(profile = profile)[::-1]
-    add_skill_form = SkillForm()   
+  
     add_language_form = LanguagesForm() 
 
     # ************************************************* Start Profile form *********************************************************
     if request.method != 'POST':
         personal_info_form = ProfileForm(instance = profile )
-        add_skill_form = SkillForm()
+
     else:
         personal_info_form = ProfileForm( request.POST, request.FILES , instance = profile )  
         if personal_info_form.is_valid():
@@ -45,52 +45,16 @@ def index(request):
 
 
 
-
-  # ************************************************* Start Experiences form *********************************************************
-    if request.method  != 'POST':
-            add_experience_form = ExperiencesForm()
-    else:
-        add_experience_form = ExperiencesForm(request.POST, request.FILES )
-        if add_experience_form.is_valid():
-            new_experience = add_experience_form.save(commit=False)
-            new_experience.profile = logged_in_user
-            new_experience.save()
-            add_experience_form.save()
-            return redirect("main_app:index")
- # ************************************************* End Experieces form *********************************************************
-
-
-
-
-
-
-
-  # ************************************************* Start  Education form *********************************************************
-    if request.method != 'POST':
-        add_education_form = EducationForm()
-    else:
-        add_education_form = EducationForm(request.POST, request.FILES )
-        if add_education_form.is_valid():
-            new_education = add_education_form.save(commit=False)
-            new_education.profile = logged_in_user
-            new_education.save()
-            add_education_form.save()
-            return redirect("main_app:index")
- # ************************************************* End    Education    form *********************************************************
-
-
-
     context = {
         "profile":profile,
         "experiences":experiences,
         "educations":educations,
-        "skills":skills,
+    
         "languages":languages,
         "personal_info_form":personal_info_form,
-        "add_skill_form":add_skill_form ,
+        "skills":skills,
         "add_language_form":add_language_form,
-        "add_experience_form":add_experience_form,
-        "add_education_form":add_education_form ,
+      
         }
     return render(request, 'main_app/index.html', context)
 
@@ -111,7 +75,7 @@ def edit_experience(request, experience_id ):
         }
 
 
-    return render(request, 'main_app/experience.html', context)
+    return render(request, 'main_app/edit_experience.html', context)
 
 @login_required
 def add_education(request ):
@@ -132,10 +96,30 @@ def add_education(request ):
         }
     return render(request, 'main_app/add_education.html', context)
 
+def add_experience(request ):
+    logged_in_user = Profile.objects.get(user = request.user)
+    if request.method != 'POST':
+        add_experience_form = ExperiencesForm()
+    else:
+        add_experience_form = ExperiencesForm(request.POST, request.FILES )
+        if add_experience_form.is_valid():
+            new_experience = add_experience_form.save(commit=False)
+            new_experience.profile = logged_in_user
+            new_experience.save()
+            add_experience_form.save()
+            return redirect("main_app:index")
+        
+    context = {
+        "add_experience_form":add_experience_form,
+        }
+    return render(request, 'main_app/add_experience.html', context)
+
+
 @login_required
 def add_skill(request):
-    x = request.META["HTTP_REFERER"]
-    print(x)
+
+    skills = Skills.objects.filter(profile__user = request.user)[::-1]
+ 
     logged_in_user = Profile.objects.get(user = request.user)
     if request.method != 'POST':
         add_skill_form = SkillForm()
@@ -146,12 +130,18 @@ def add_skill(request):
             new_skill.profile = logged_in_user
             new_skill.save()
             add_skill_form.save()
-            return redirect(x)
+            return redirect('main_app:add_skill')
+    context = {
+        "add_skill_form":add_skill_form,
+        "skills":skills,
+    }
+    return render(request, 'main_app/add_skill.html', context)
         
 
 @login_required
 def add_language(request):
     logged_in_user = Profile.objects.get(user = request.user)
+    languages = Languages.objects.filter(profile__user = request.user)[::-1]
     if request.method != 'POST':
         add_language_form = LanguagesForm()
     else:
@@ -161,12 +151,13 @@ def add_language(request):
             new_language.profile = logged_in_user
             new_language.save()
             add_language_form.save()
-            return redirect("main_app:index")
+            return redirect("main_app:add_language")
         
     context = {
         "add_language_form":add_language_form ,
+        "languages":languages,
         }
-    return render(request, 'main_app/add_education.html', context)
+    return render(request, 'main_app/add_language.html', context)
 
 @login_required
 def delete_experience(request, experience_id ):
@@ -189,25 +180,25 @@ def edit_education(request, education_id ):
         "education":education,
         "education_form":education_form,
         }
-    return render(request, 'main_app/education.html', context)
+    return render(request, 'main_app/edit_education.html', context)
 
 @login_required
 def delete_education(request, education_id ):
     education = Education.objects.get(id = education_id)
     education.delete()
-    return redirect("main_app:index")
+    return redirect("main_app:add_education")
 
 @login_required
 def delete_skill(request, skill_id ):
     skill = Skills.objects.get(id = skill_id)
     skill.delete()
-    return redirect("main_app:index")
+    return redirect("main_app:add_skill")
 
 @login_required
 def delete_language(request, language_id ):
     languages = Languages.objects.get(id = language_id)
     languages.delete()
-    return redirect("main_app:index")
+    return redirect("main_app:add_language")
 
 @login_required
 def templates_list(request):
