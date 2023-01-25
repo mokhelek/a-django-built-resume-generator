@@ -3,7 +3,9 @@
     background-color: rgba(1, 80, 0, 0.184) !important;
     box-shadow: 4px 0 8px rgb(50, 50, 50); 
 }
-
+a{
+    text-decoration: none;
+}
 .offcanvas-body h3 {
     margin-right: 1rem;
 }

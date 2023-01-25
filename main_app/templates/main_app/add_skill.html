@@ -18,8 +18,8 @@
         <div class="col-md-8 col-lg-9" style="background-color: #ffffff85;">
 
             <div class="container">
-                <div   id="my_margin" style="margin: 0.5cm 1cm 1cm 1cm;" >
-                    <h5><b>Skills</b></h5>
+                <div id="my_margin" style="margin: 0.5cm 1cm 1cm 1cm;" >
+                    <h5 style="margin-top: 15px;" ><b>Skills</b></h5>
                     <hr>
     
                     <form  action="{% url 'main_app:add_skill' %}" action="#" method="post">
@@ -48,7 +48,15 @@
                                 </div> 
                             </div>
                             {% empty %}
-                                no skills yet
+                                
+                            <br>
+                            <br>
+                            <center>
+                                <img style="width: 60%;height: auto;" src="{% static 'images/illustrations/undraw_no_data_re_kwbl.svg' %}" alt="">
+                            </center>
+
+                            <br>
+                            <br>
                             {% endfor %}
                         </div>
                     </div>
