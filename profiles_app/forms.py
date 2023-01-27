@@ -10,54 +10,29 @@ from .models import *
 
 class SignUpForm(UserCreationForm):
 
-    email = forms.EmailField(help_text="Required")
+    email = forms.EmailField(help_text="")
     password1 = forms.CharField(help_text="")
 
     class Meta:
         model = User
-        fields = ('first_name','last_name','username','email')
+        fields = ('first_name','last_name','email')
         
 
 
 
 class ProfileForm(ModelForm):
-    #bio = forms.CharField(widget=forms.Textarea , label='Summery')
+    bio = forms.CharField(widget=forms.Textarea , label='Summery')
     
     class Meta:
         model = Profile
         fields = '__all__'
-        exclude = ("user","avatar", )
+        exclude = ("user", )
         widgets = {
             'bio':forms.Textarea(attrs={'class':'summery_class','label':'Summery'}) ,
             'first_name':forms.TextInput(attrs={'class':'firstname_class'}) ,
             'last_name':forms.TextInput(attrs={'class':'lastname_class'}) ,
             #'bio':forms.Textarea(attrs={'class':'summery_class'}) ,
         }
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 class AvatarForm(ModelForm):
@@ -65,9 +40,7 @@ class AvatarForm(ModelForm):
     class Meta:
         model = Profile
         fields = ("avatar",)
-       
-  
-  
+
 
 class ExperiencesForm(ModelForm):
     start_date = forms.DateField(widget = forms.widgets.DateInput(attrs={'type':'date','rows':1 ,'columns':2}))

@@ -12,6 +12,8 @@
 
 <section >
 
+
+
 <div class="row">
 
 <div class="col-md-4 col-lg-3" id="personal_info_container">
@@ -42,10 +44,16 @@
 
                 </h3>
                 <div id="summery"  style="border-left: 4px solid rgba(4, 189, 22, 0.397);background-color: #22ac0012;width: 99%; ">
-                <div  >
+                    {% if profile.bio %}
+                <div>
                     <h6 class="lead" style="font-size: 0.98rem;margin-left: 16px;margin-right: 6px;padding-top: 10px;padding-bottom: 10px;color: #434242d3;">{{profile.bio}} </h6>   
                 </div>
-                
+                    {% else %}
+                    <div>
+                        <h6 class="lead" style="font-size: 0.98rem;margin-left: 16px;margin-right: 6px;padding-top: 10px;padding-bottom: 10px;color: #434242d3;"> write your professional summery here </h6>   
+                    </div>
+                    {% endif %}
+
                 </div>
                 <h6 style="font-weight: 600;"></h6>
                 <hr> 
@@ -72,7 +80,7 @@
                             </div>
                             <div class="timeline-info">
                                 <h3 style="font-size: 1.4rem !important;color:rgb(60, 60, 60);font-weight:600 ; margin-bottom: 0.1cm;"><span>{{experience.job_title}}</h3>
-                                <h6 style="margin-top: 0cm;font-size: 0.9rem !important;  color:rgb(84, 84, 84);margin-bottom: 0.1cm;" >{{experience.company_name}} &bull; <span style="color: gray;font-size:0.75rem;margin-bottom: 0.1cm;"> {{experience.start_date|date:"M Y" }} - {{experience.end_date|date:"M Y" }} </span>  </h6>
+                                <h6 style="margin-top: 0cm;font-size: 1rem !important;  color:rgb(40, 40, 40);margin-bottom: 0.1cm;" >{{experience.company_name}} &bull; <span style="color: gray;font-size:0.75rem;margin-bottom: 0.1cm;"> {{experience.start_date|date:"M Y" }} - {{experience.end_date|date:"M Y" }} </span>  </h6>
                             
                                 <p style="color: rgb(101, 101, 101);margin-bottom: 0cm;font-size: 0.9rem">{{experience.job_description|truncatechars:200}}</p>
         
@@ -112,7 +120,7 @@
             <div class="col-lg-6 col-12">
                     <div class=" card card-body"   id="education_card" style="height:190px">
                     <h4 style="margin-bottom: 0cm;">  <strong>  {{education.institution_name}}  </strong></h5> 
-                    <h6 style="color: rgb(92, 92, 92);font-size:1rem;margin-bottom: 0.1cm;">  {{education.qualification_name}}    </h6> 
+                    <h6 style="color: rgb(40, 40, 40);font-size:1rem;margin-bottom: 0.1cm;">  {{education.qualification_name}}    </h6> 
                     <h6 style="color: gray;font-size: 0.8rem; ">   {{education.start_date|date:"M Y" }} - {{education.end_date|date:"M Y" }}</h6> 
                         <p> {{education.education_description|truncatechars:120}} </p>
                     

@@ -99,8 +99,6 @@
 
 
 
-  
-
 <body style="background-color: rgba(237, 255, 238, 0.212); height: 100%;">
 
 <div class="container-fluid">
@@ -113,17 +111,28 @@
                 
                 <div class="col-11 col-sm-10 col-md-10 col-lg-8">
 
-                    <h1 align="center" style="margin-bottom: 15px;font-weight: 700;color: #00672A;">Welcome to QuickResume</h1>
+                    <h1 align="center" style="margin-bottom: 15px;font-weight: 700;color: #00672A;font-size:2.4rem">Welcome to QuickResume</h1>
                     
                     <div style="border: 1px solid rgba(0, 128, 0, 0.246);border-radius: 20px;background-color: rgba(199, 255, 203, 0.179);">
                
                     <form style="margin: 1cm;" method="post" action="{% url 'profiles_app:register' %}" class="form">
                         {% csrf_token %}
                         {% bootstrap_form form %}
-                        <span>
-                        <button name="submit" class="btn btn-success btn-md rounded-pill ">Sign Up</button> 
-                        <span>&nbsp;&nbsp;Already have an account ? <a style="color:rgb(82, 82, 255);" href="{% url 'profiles_app:login' %}"> Sign In</a></span>
-                        </span>
+                        <div  class="d-none d-md-block">
+                            <span >
+                                <button  name="submit" class="btn btn-success btn-md rounded-pill ">Sign Up</button> 
+                                <span> Already have an account ? <a style="color:rgb(82, 82, 255);" href="{% url 'profiles_app:login' %}"> Sign In</a></span>
+                            </span>
+                        </div>
+                     
+                        <div class="d-block d-md-none">
+                            <button style="width:100%" name="submit" class="btn btn-success btn-md rounded-pill ">Sign Up</button> 
+                            
+                            <p align="center" style="margin-top: 10px;"> Already have an account ? <a style="color:rgb(82, 82, 255);" href="{% url 'profiles_app:login' %}"> Sign In</a></p>
+
+                        </div>
+                       
+                           
                         <input type="hidden" name="next" 
                         value="{% url 'main_app:index' %}" />
                         

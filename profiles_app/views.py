@@ -22,3 +22,23 @@ def register(request):
     context = {'form': form}
     return render(request, 'registration/register.html', context)
 
+
+
+"""
+
+
+from django import forms
+from django.contrib.auth.forms import AuthenticationForm
+
+
+def login_view(request):
+    form = EmailAutheticationForm(request.POST or None)
+    print(form )
+  
+    if form.is_valid():
+        print(form.get_user()  )
+        login(request, form.get_user() )
+        return redirect("main_app:index")
+
+    return render(request, 'registration/login.html', {"form":form})
+"""

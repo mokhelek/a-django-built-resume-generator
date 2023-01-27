@@ -17,16 +17,16 @@ def compress(image):
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE ,default=1 ) # this has the username inside
     avatar = models.ImageField(null=True, upload_to="avatars", blank=True , default='default.png')
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
-    job_title = models.CharField(max_length=200,default="")
-    bio = models.TextField( default=" write your professional summery here ")
+    first_name = models.CharField(max_length=200,null=True, blank=True)
+    last_name = models.CharField(max_length=200,null=True, blank=True)
+    job_title = models.CharField(max_length=200,null=True, blank=True)
+    bio = models.TextField( null=True, blank=True)
     email = models.EmailField()
-    cell = models.CharField(max_length=15,null=True, default="-")
+    cell = models.CharField(max_length=15,null=True, blank=True )
     
     
  
-    location = models.CharField(max_length=300, default="-")
+    location = models.CharField(max_length=300, null=True, blank=True)
     linkedin_link = models.URLField(null=True, blank=True)
     twitter_link = models.URLField(null=True, blank=True)
     github_link = models.URLField(null=True, blank=True)

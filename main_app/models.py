@@ -3,7 +3,7 @@ from django.db import models
 
 from django.db import models
 from django.contrib.auth.models import (
-    BaseUserManager, AbstractBaseUser
+    BaseUserManager, AbstractUser
 )
 
 
@@ -17,5 +17,8 @@ class PDFTemplate(models.Model):
     def __str__(self):
         return self.template_name
 
-
+class User(AbstractUser):
+    USERNAME_FIELD = "email"
+    email = models.EmailField(max_length=200, unique=True)
+    REQUIRED_FIELDS = []
 
