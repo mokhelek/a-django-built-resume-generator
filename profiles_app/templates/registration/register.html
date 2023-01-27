@@ -1,10 +1,10 @@
 {% extends "main_app/base.html" %}
 {% load bootstrap5 %}
 {% load static %}
-
 {% block content %}
 
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color:#a1f6c319;height:70px;position: relative;box-shadow: 0 0 8px rgb(170, 170, 170);">
+
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color:#ffffff;height:60px;position: relative;border-bottom: 1px rgb(228, 228, 228) solid;">
     <div class="container-fluid" style="width: 92%;">
       
       {% if user.is_authenticated %}
@@ -13,7 +13,7 @@
     </a>
     {% else %}
     <a class="navbar-brand d-flex" href="{% url 'main_app:landing_page' %}">
-        <img   style="width:150px" src="{% static 'images/icons/logo-dark.png'  %}" alt=""> 
+        <img   style="width:150px" src="{% static 'images/icons/logo-dark.png'  %}" alt="">
       </a>
     {% endif %}
 
@@ -97,32 +97,112 @@
   </nav>
 
 
-<section style="background-color:rgba(185, 255, 190, 0.212);">
 
 
-<div class="container"> 
+  
+
+<body style="background-color: rgba(237, 255, 238, 0.212); height: 100%;">
+
+<div class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-md-7 col-lg-8">
+        <br>
+            <div class="d-flex align-items-center justify-content-center     ">
+                
+                <div class="col-11 col-sm-10 col-md-10 col-lg-8">
+
+                    <h1 align="center" style="margin-bottom: 15px;font-weight: 700;color: #00672A;">Welcome to QuickResume</h1>
+                    
+                    <div style="border: 1px solid rgba(0, 128, 0, 0.246);border-radius: 20px;background-color: rgba(199, 255, 203, 0.179);">
+               
+                    <form style="margin: 1cm;" method="post" action="{% url 'profiles_app:register' %}" class="form">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        <span>
+                        <button name="submit" class="btn btn-success btn-md rounded-pill ">Sign Up</button> 
+                        <span>&nbsp;&nbsp;Already have an account ? <a style="color:rgb(82, 82, 255);" href="{% url 'profiles_app:login' %}"> Sign In</a></span>
+                        </span>
+                        <input type="hidden" name="next" 
+                        value="{% url 'main_app:index' %}" />
+                        
+                    </form>
+             
+                    </div>
+                </div>
+            </div>
+          
+           
+     
+        </div>
+
+        <div class="col-md-5 col-lg-4 d-none d-md-block" style="background-color: #00672A;height: 700px;box-shadow: 0 0 8px rgb(96, 96, 96);">
+            <div class="d-md-block">
+                <br><br><br>
+            </div>
+           <center>
+            <img style="width: 40%;" class="img-fluid" src="{% static 'images/illustrations/undraw_join_re_w1lh.svg' %}" alt="">
+            <br><br>
+            <h1 style="color:#F5FFCE;" ><strong>New Here?</strong></h2>
+
+
+            <p style="width: 85%;color: #e5e5e5;">
+                The quickest and easiest way to build professional CVs & resumes for your next job application 
+            </p>
+            <br>
+            <div style="width: 50%;" class="row">
+                <a href="{% url 'profiles_app:register' %}" class="btn btn-primary rounded-pill btn-md" >Get Started</a>
+            </div>
+    
+           </center>
+          
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+ 
+    
+{% endblock  %}
+
+
+
+
+
+<div class="d-none d-md-block">
+    <br><br><br><br>
+</div>
+<div class="d-block d-md-none">
+    <br><br><br>
+</div>
+
+<div class="container">
     <br>
-    <div  class="d-flex justify-content-center">
-        <div class="col-11 col-md-9 col-lg-7" >
-            <center>  
-                <h2 style="font-weight: 700;"> Get Started </h2>
-                <h2 style="font-weight: 700;">With Your Account</h2>
+    <div class="d-flex justify-content-center">
+        <div class="col-11 col-md-8 col-lg-6" >  
+            <center>
+                <h2 style="font-weight: 700;margin-bottom: 25px;"> Sign Into your account </h2>
             </center>
-            <div style="border: 1px solid rgba(0, 128, 0, 0.535);border-radius: 10px;background-color: rgba(75, 252, 87, 0.223);">
-        
-                <form style="margin:1cm; " method="post" action="{% url 'profiles_app:register' %}">
+            
+            <div style="border: 1px solid rgba(0, 128, 0, 0.434);border-radius: 10px;background-color: rgba(75, 252, 87, 0.179);">
+                
+                <form style="margin: 1cm;" method="post" action="{% url 'profiles_app:login' %}" class="form">
                     {% csrf_token %}
                     {% bootstrap_form form %}
-                    <button class="btn btn-success btn-sm" name="submit">Register</button>
-                    <br>
+                    <span>
+                    <button name="submit" class="btn btn-success btn-md">Sign In</button> 
+                    <span>&nbsp;&nbsp;  New User ? <a style="color:rgb(82, 82, 255);" href="{% url 'profiles_app:register' %}"> Sign Up</a></span>
+                    </span>
+                    <input type="hidden" name="next" 
+                    value="{% url 'main_app:index' %}" />
                 </form>
-                
+                <br>
             </div>
+           
         </div>
-      
     </div>
-    <br>
 </div>
-</section>
-{% endblock content %}
-

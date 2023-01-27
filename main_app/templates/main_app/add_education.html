@@ -6,37 +6,45 @@
 
 <div class="container-fluid">
    
-    <div class="row">
-        <div class="col-md-4 col-lg-3" id="personal_info_container">
-            {% include 'main_app/sidebar.html' %}
+<div class="row">
+    <div class="col-md-4 col-lg-3" id="personal_info_container">
+        {% include 'main_app/sidebar.html' %}
 
-
-        </div>
-
-        <div class="col-md-8 col-lg-9" style="background-color: #ffffff85;">
-
-            <div class="container">
-                <div   id="my_margin" style="margin: 0.5cm 1cm 1cm 1cm;" >
-
-                <a style="font-size: 1.05rem;background-color: rgba(0, 255, 34, 0.42);" href="#" class="btn btn-sm"> 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-                      </svg> &nbsp;back &nbsp;
-                </a>
-            
-                <h3 style="margin-top: 15px;"> <b style="color:#00672A;"> Add Education </b> </h3>
-                <br>
-                <form action="{% url 'main_app:add_education' %}" method="post">
-                    {% csrf_token %}
-                    {% bootstrap_form add_education_form %}
-                    <button class="btn btn-success btn-sm" name="submit">Save</button>
-                </form>
-                </div>
-            </div>
-          
-        </div>
 
     </div>
+
+    <div class="col-md-8 col-lg-9" style="background-color: #ffffff85;">
+
+  
+        <div   id="my_margin" style="margin: 0.5cm 1cm 1cm 1cm;" >
+
+        <div style="display:inline-block" >
+            <a style="font-size: 1.02rem;background-color: rgba(51, 0, 255, 0.091);color: rgb(20, 27, 255);margin-top: 10px;" href="{% url 'main_app:index' %}" class="btn btn-sm rounded-circle"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                </svg>
+            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <h5 style="margin-top: 15px;display:inline-table"> 
+                <b style="color:#00672A;margin-bottom: 0rem;"> Add Education </b>
+                <div style="width: 70px;">
+                    <hr style="border: 2px #00a648 solid;opacity: 0.8;margin-top:0.3rem ;">
+                </div>
+            </h5>
+        </div>
+   
+            <br><br>
+            <form action="{% url 'main_app:add_education' %}" method="post">
+                {% csrf_token %}
+                {% bootstrap_form add_education_form %}
+                <button class="btn btn-success btn-sm" name="submit">Save</button>
+            </form>
+        </div>
+        <br>
+    
+    </div>
+
+</div>
 
 </div>
 

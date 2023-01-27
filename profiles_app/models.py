@@ -1,7 +1,7 @@
 from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User 
-
+from main_app.models import *
 from io import BytesIO
 from PIL import Image
 from django.core.files import File
@@ -16,18 +16,16 @@ def compress(image):
 
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE ,default=1 ) # this has the username inside
+    avatar = models.ImageField(null=True, upload_to="avatars", blank=True , default='default.png')
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     job_title = models.CharField(max_length=200,default="")
+    bio = models.TextField( default=" write your professional summery here ")
     email = models.EmailField()
     cell = models.CharField(max_length=15,null=True, default="-")
-    bio = models.TextField( default=" write your professional summery here ")
-    avatar = models.ImageField(null=True, upload_to="avatars", blank=True , default='default.png')
-    gender_choice = (
-        ("male", "Male"),
-        ("Female", "Female"),
-    )
-    #gender = models.CharField(choices=gender_choice, max_length=10)
+    
+    
+ 
     location = models.CharField(max_length=300, default="-")
     linkedin_link = models.URLField(null=True, blank=True)
     twitter_link = models.URLField(null=True, blank=True)
@@ -49,9 +47,9 @@ class Skills(models.Model):
 class Experience(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     job_title = models.CharField(max_length=200)
-    job_description = models.TextField()
     company_name = models.CharField(max_length=100)
-    #company_logo = models.ImageField(null=True, upload_to="companies", blank=True,default='default.png')
+    job_description = models.TextField()
+    
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
     

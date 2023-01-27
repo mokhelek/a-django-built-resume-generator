@@ -8,3 +8,5 @@ admin.site.register(Experience)
 admin.site.register(Education)
 admin.site.register(Projects)
 admin.site.register(Languages)
+
+

@@ -7,15 +7,19 @@ from django.forms import ModelForm
 from .models import *
 
 
+
 class SignUpForm(UserCreationForm):
+
     email = forms.EmailField(help_text="Required")
-    username = forms.CharField(widget=forms.TextInput , help_text = '')
-    password1 = forms.CharField(widget=forms.TextInput , help_text = '')
+    password1 = forms.CharField(help_text="")
+
     class Meta:
         model = User
-        fields = ("first_name","last_name","username","email","password1","password2")
+        fields = ('first_name','last_name','username','email')
         
-        
+
+
+
 class ProfileForm(ModelForm):
     #bio = forms.CharField(widget=forms.Textarea , label='Summery')
     
@@ -31,6 +35,31 @@ class ProfileForm(ModelForm):
         }
   
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class AvatarForm(ModelForm):
 
     class Meta:

@@ -15,13 +15,13 @@
     <title>resu.me_</title>
     
     <style>
-        @media  screen and ( max-width:400px ) {
+        @media  screen and ( max-width:600px ) {
             #templates_text{
-                font-size: 3rem   !important;
+                font-size: 2.6rem   !important;
             }
             #hero_text{
-                font-weight: 600 !important;
-                font-size: 2.7rem !important;
+                font-weight: 700 !important;
+                font-size: 3rem !important;
             }
         }
   
@@ -31,7 +31,7 @@
 </head>
 
 
-  <nav class="navbar navbar-expand-lg fixed-top" style="background-color:#00672A;height:80px;position: relative;">
+  <nav class="navbar navbar-expand-lg fixed-top" style="background-color:#00672A;height:70px;position: relative;">
     <div class="container-fluid" style="width: 92%;">
       
       {% if user.is_authenticated %}
@@ -40,7 +40,7 @@
     </a>
     {% else %}
     <a class="navbar-brand" href="{% url 'main_app:landing_page' %}">
-        <img   style="width:160px" src="{% static 'images/icons/logo-light.png'  %}" alt="">
+        <img   style="width:140px" src="{% static 'images/icons/logo-light.png'  %}" alt="">
       </a>
     {% endif %}
 
@@ -59,14 +59,14 @@
                     </li>&nbsp;&nbsp;&nbsp;
                     {%  if user.is_authenticated %}
                     <li class="nav-item" style="padding-top:4px;">
-                        <a style="color: #4f4f4f; background-color: #b9b9b9eb; font-size: 1rem;border:#5555555f 2px solid;" class=" btn btn-sm rounded-pill" href="{% url 'profiles_app:logout' %}"> &nbsp; logout &nbsp; </a>
+                        <a style="color: #4f4f4f; background-color: #b9b9b9eb; font-size: 1rem;border:#5555555f 2px solid;" class=" btn btn-sm rounded-pill nav-link" href="{% url 'profiles_app:logout' %}"> &nbsp; logout &nbsp; </a>
                     </li>
                
                     {%  else %}
                       
-                    <li class="nav-item" style="padding-top:4px;">
-                        <a style="color: #F0FCBF; background-color: #95f8bd51; font-size: 1rem;border:#F0FCBF 2px solid;" class=" btn btn-sm rounded-pill" href="{% url 'profiles_app:login' %}"> &nbsp; sign in &nbsp; </a>
-                    </li>
+                  
+                        <a style="color: #F0FCBF; background-color: #95f8bd51; font-size: 1rem;" class=" btn btn-sm rounded-pill " href="{% url 'profiles_app:login' %}"> &nbsp; sign in &nbsp; </a>
+                  
                     {%  endif %}
                 </ul>
             </div>
@@ -137,23 +137,52 @@
         
             <section class="landing-page" style="background-color:#00672A;" >
                 <div class="container-fluid" style="width: 90%;height:100% !important;">
-                    <div    class="d-none   d-md-block">
+                    <div  class="d-none   d-md-block">
                         <br><br><br> 
 
                     </div>
+
+                    <div  class="d-block   d-md-none">
+                        <br><br>
+
+                    </div>
+
                     <div class="row">
-                        <div class="col-md-7">
+                        <div class="col-md-7    d-none   d-md-block">
                             <br>
+                            
                             <h1 id="hero_text" style="margin-bottom: -1rem;font-size: 3.5rem;font-weight: 800;color:#F5FFCE;"> Get Your  </h1>
                             <h1 id="hero_text" style="margin-top: 0cm;font-size: 3.5rem;font-weight: 800;color:#F5FFCE;line-height: 60px;"> resume done!</h1>
-                            <p style="width: 85%;color:#d4d4d4;font-size: 1.2rem;"> 
-                                The easiest and fastest way to build professional cv & resume for your next job application 
+                            <p style="width: 92%;color:#d4d4d4;font-size: 1.2rem;"> 
+                                The quickest and easiest way to build professional looking resumes % CVs for your next job application 
                             </p>
                             <br>
                             <a href="{% url 'profiles_app:register' %}" class="btn  btn-lg rounded-pill" style="background-color:#f0fcbf;color:#00672A;font-weight: 600;"> Get started <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                             </svg></a>
                         </div>
+
+
+                        <div class="col-md-7  d-block   d-md-none">
+                            <br>
+                            <center>
+
+                           
+                            <h1 id="hero_text" style="margin-bottom: -1rem;font-size: 3.5rem;font-weight: 800;color:#F5FFCE;"> Get Your  </h1>
+                            <h1 id="hero_text" style="margin-top: 0cm;font-size: 3.5rem;font-weight: 800;color:#F5FFCE;line-height: 60px;"> resume done!</h1>
+                            <p style="width: 100%;color:#d4d4d4;font-size: 1.2rem;"> 
+                                The easiest and fastest way to build professional cv & resume for your next job application 
+                            </p>
+                            <br>
+                            <a href="{% url 'profiles_app:register' %}" class="btn  btn-lg rounded-pill" style="background-color:#f0fcbf;color:#00672A;font-weight: 600;"> Get started <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                            </svg></a>
+
+                        </center>
+                        </div>
+
+
+
                         <div class="col-md-5">
                             <br>
                             <img class="img-fluid" src="{% static 'images/illustrations/undraw_online_cv_re_gn0a.svg' %}" alt="">
@@ -166,16 +195,20 @@
 
             </section>
 
-            <section class="about-section" style="background-color: #ebf6ee;">
-                <br>
-                <div class="d-flex justify-content-center">
-                    <div class="" style="border-left: 3px solid #0067299a;border-bottom: 3px solid #0067299a;margin:0cm">
-                        <h4 style="margin-left: 5px;color:#00672A;margin-top: 0cm;margin-bottom: 0cm;"> <b> About</b>  &nbsp;</h4>
-                      </div>
-                </div>
+            <section class="about-section" style="background-color: #ebf6ee96;">
+              
                 
 
                 <div class="container">
+                    <br><br>
+                    <div class="d-flex justify-content-start">
+                        <div class="" style="border-left: 3px solid #00a648 ;margin:0cm">
+                            <h3 style="margin-left: 8px;color:#00672A;margin-top: 0cm;margin-bottom: 0cm;"> About QuickResume  &nbsp;</h3>
+                            <div style="width: 70px;">
+                                <hr style="border: 2px #00a648 solid;opacity: 0.8;margin-top:0.3rem ;">
+                            </div>
+                          </div>
+                    </div>
                     <br> <br>
                     <div class="row">
                         <div class="col-md-5">
@@ -183,24 +216,22 @@
                         </div>
                         <div class="col-md-7">
                             <br>
-                            <div style="border-left: 2px solid green;width: 90%;">
+                            <div style="width: 90%;">
                                 <p style="margin-left: 10px">
                                     Building & designing professional looking resume can often be challeging,
                                     especially to those with little or no technical skills to do so. 
                                     This platforms hopes to solve that problem, by offering a fast and easy way to build your resume.
                                     You can have your PDF resume in 3 easy steps:
 
-                                        <ul>
-                                            <h4 style="margin-bottom: 10px;font-size: 1rem"> <img  height="16" width="16" src="{% static 'images/icons/greentick.png' %}" alt="no pic">&nbsp; <span style="font-size: 1rem">  Register </span></h4>
+                                        
+                                    <h4 style="margin-bottom: 10px;font-size: 0.9rem;margin-left: 10px"> <img  height="16" width="16" src="{% static 'images/icons/greentick.png' %}" alt="no pic">&nbsp; <span style="font-size: 0.95rem">  Register </span></h4>
 
-                                            <h3 style="margin-bottom: 10px ;font-size: 1rem"> <img  height="16" width="16" src="{% static 'images/icons/greentick.png' %}" alt="no pic">&nbsp; <span style="font-size: 1rem">  Provide your personal & professional info </span></h3>
-                                        
-                                            <h3 style="margin-bottom:10px;font-size: 1rem"> <img  height="16" width="16" src="{% static 'images/icons/greentick.png' %}" alt="no pic">&nbsp; <span style="font-size: 1rem">  Pick a template and download </span></h3>
-                                        
-                                        </ul>
-                                    
+                                    <h3 style="margin-bottom: 10px ;font-size: 0.9rem;margin-left: 10px"> <img  height="16" width="16" src="{% static 'images/icons/greentick.png' %}" alt="no pic">&nbsp; <span style="font-size: 0.95rem">  Provide your personal & professional info </span></h3>
+                                
+                                    <h3 style="margin-bottom:10px;font-size: 0.9rem;margin-left: 10px"> <img  height="16" width="16" src="{% static 'images/icons/greentick.png' %}" alt="no pic">&nbsp; <span style="font-size: 0.95rem">  Pick a template and download </span></h3>
+ 
                                 <p style="margin-left: 10px">
-                                    Job applications will be so much easier now with the help of resu.me_ . This platform was built and designed by
+                                    Job applications will be so much easier now with the help of QuickResume. This platform was built and designed by
                                     <a href="https://mokhelek.pythonanywhere.com"> Mokhele Katleho</a>
                                 </p>
                                     
@@ -218,16 +249,22 @@
 
             </section>
 
-            <section style="background-color: rgb(206, 206, 206);">
-                <br>
-                <div class="d-flex justify-content-center">
-                    <div class="" style="border-left: 3px solid #0067299a;border-bottom: 3px solid #0067299a;margin:0cm">
-                        <h4 style="margin-left: 5px;color:#00672A;margin-top: 0cm;margin-bottom: 2px;"> <b> Templates</b>  &nbsp;</h4>
-                      </div>
-                </div>
-                <br>
-                <br>
+            <section style="background-color: rgb(230, 230, 230);">
+               
                 <div class="container">
+
+                    <br><br>
+                    <div class="d-flex justify-content-start">
+                        <div class="" style="border-left: 3px solid #00a648 ;margin:0cm">
+                            <h3 style="margin-left: 8px;color:#00672A;margin-top: 0cm;margin-bottom: 0cm;"> Resume Templates  &nbsp;</h3>
+                              <div style="width: 70px;">
+                                <hr style="border: 2px #00a648 solid;opacity: 0.8;margin-top:0.3rem ;">
+                            </div>
+                          </div>
+                    </div>
+                    <br>
+                    <br>
+
                     <div class="row">
                         <div class="col-md-7">
                             <h1  id="templates_text"   style="margin-bottom: -1rem;font-size: 4rem;font-weight: 800;color:#00672A;"> Just Pick  </h1>

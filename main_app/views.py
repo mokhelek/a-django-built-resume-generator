@@ -23,39 +23,62 @@ def landing_page(request):
 
 @login_required
 def index(request):
-    logged_in_user = Profile.objects.get(user = request.user)
     profile = Profile.objects.get(user=request.user)
-    experiences = Experience.objects.filter(profile = profile)[::-1]
-    educations = Education.objects.filter(profile = profile)[::-1]
-    skills = Skills.objects.filter(profile__user = request.user)[::-1]
-    languages = Languages.objects.filter(profile = profile)[::-1]
-  
-    add_language_form = LanguagesForm() 
-
-    # ************************************************* Start Profile form *********************************************************
-    if request.method != 'POST':
-        personal_info_form = ProfileForm(instance = profile )
-
-    else:
-        personal_info_form = ProfileForm( request.POST, request.FILES , instance = profile )  
-        if personal_info_form.is_valid():
-            personal_info_form.save() 
-            return redirect("main_app:index")
- # *************************************************    End Profile form *********************************************************
-
-
-
-    context = {
-        "profile":profile,
-        "experiences":experiences,
-        "educations":educations,
+    try:
+        
+        profile = Profile.objects.get(user = request.user)
+        experiences = Experience.objects.filter(profile = profile)[::-1]
+        educations = Education.objects.filter(profile = profile)[::-1]
+        skills = Skills.objects.filter(profile__user = request.user)[::-1]
+        languages = Languages.objects.filter(profile = profile)[::-1]
     
-        "languages":languages,
-        "personal_info_form":personal_info_form,
-        "skills":skills,
-        "add_language_form":add_language_form,
+        add_language_form = LanguagesForm() 
+
+        # ************************************************* Start Profile form *********************************************************
+        if request.method != 'POST':
+            personal_info_form = ProfileForm(instance = profile )
+
+        else:
+            personal_info_form = ProfileForm( request.POST, request.FILES , instance = profile )  
+            if personal_info_form.is_valid():
+                personal_info_form.save() 
+                return redirect("main_app:index")
+    # *************************************************    End Profile form *********************************************************
+
+
+
+        context = {
+            #"profile":profile,
+            "experiences":experiences,
+            "educations":educations,
+        
+            "languages":languages,
+            "personal_info_form":personal_info_form,
+            "skills":skills,
+            "add_language_form":add_language_form,
+        
+            }
+    except:
+    
+        add_language_form = LanguagesForm() 
+
+        if request.method != 'POST':
+            personal_info_form = ProfileForm()
+
+        else:
+            personal_info_form = ProfileForm( request.POST, request.FILES  )  
+            if personal_info_form.is_valid():
+                personal_info_form.save() 
+                return redirect("main_app:index")
+
+        context = {
       
-        }
+         
+            "personal_info_form":personal_info_form,
+           
+            "add_language_form":add_language_form,
+        
+            }
     return render(request, 'main_app/index.html', context)
 
 @login_required  

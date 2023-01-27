@@ -3,7 +3,9 @@ from django.contrib.auth.models import User
 from .models import *
 
 def create_profile(sender, instance, created, **kwargs):
+	print(instance)
 	if created:
+		print("created")
 		Profile.objects.create(
 			user=instance,
 			first_name=instance.first_name,

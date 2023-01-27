@@ -1,5 +1,12 @@
 from django.db import models
 
+
+from django.db import models
+from django.contrib.auth.models import (
+    BaseUserManager, AbstractBaseUser
+)
+
+
 # Create your models here.
 
 class PDFTemplate(models.Model):
@@ -9,3 +16,6 @@ class PDFTemplate(models.Model):
     
     def __str__(self):
         return self.template_name
+
+
+

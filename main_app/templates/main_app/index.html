@@ -31,7 +31,7 @@
             <div class="col-12">
             
 
-                <h4 style="margin-bottom: 0.9rem;margin-top: 10px;"> <b style="color: #00672A;">Summery  </b>
+                <h4 style="margin-top: 10px;"> <b style="color: #00672A;">Summery  </b>
                 
                     <button onclick="personalFunction()" style="color:#4d77ff;background: none;border: none;font-size: 1rem; font-weight: 500;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -50,7 +50,7 @@
                 <h6 style="font-weight: 600;"></h6>
                 <hr> 
 
-            <div class="row">    &nbsp;&nbsp;&nbsp;
+            <div class="row">    
                 
 
                 <div class="col-lg-11 col-12">
@@ -262,7 +262,7 @@
                 <br>
                 <img style="width: 25%;height: auto;" src="{% static 'images/illustrations/undraw_no_data_re_kwbl.svg' %}" alt="">
                 <br><br>
-                <a href="#" onclick="addExperiencesFunction()" class="btn btn-success">Add Experience</a>
+                <a href="{% url 'main_app:add_experience' %}"  class="btn btn-success">Add Experience</a>
             </center>
             {% endfor %}
     </div>
@@ -307,7 +307,7 @@
                     <br>
                     <img style="width: 25%;height: auto;" src="{% static 'images/illustrations/undraw_no_data_re_kwbl.svg' %}" alt="">
                     <br><br>
-                    <a href="#" onclick="addExperiencesFunction()" class="btn btn-success">Add Education</a>
+                    <a href="{% url 'main_app:add_education' %}"  class="btn btn-success">Add Education</a>
                     <br>
                 </center>
                 {% endfor %}
