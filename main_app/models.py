@@ -19,7 +19,7 @@ class PDFTemplate(models.Model):
 
 class User(AbstractUser):
     USERNAME_FIELD = "email"
-    username = models.CharField(max_length=150, unique=False, blank=True, null=True)
+    username = models.CharField(max_length=150, unique=False, blank=True, null=True , default=" ")
     email = models.EmailField(max_length=200, unique=True)
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['username']
 

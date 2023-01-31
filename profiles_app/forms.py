@@ -17,13 +17,6 @@ class SignUpForm(UserCreationForm):
         model = User
         fields = ('first_name','last_name','email',)
 
-        """widgets = {
-            'username':forms.TextInput(attrs={'class':'username_form'}) ,
-        }"""
-      
-
-
-
 class ProfileForm(ModelForm):
     bio = forms.CharField(widget=forms.Textarea , label='Summery')
     

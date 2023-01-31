@@ -67,10 +67,13 @@
 			
 					</td>
 					{% endif %}
-					{% if profile.personal_link == null and profile.github_link == null and profile.twitter_link == null and profile.linkedin_link == null   %}
-					<td style="width:4%;">
 					
-						
+					{% if profile.personal_link == null and profile.github_link == null and profile.linkedin_link == null and profile.twitter_link == null  %}
+					<td style="width:4%;">
+						<a style="text-decoration: none;color:white;" href="{{profile.personal_link}}">
+							.
+						</a>
+			
 					</td>
 					{% endif %}
 				</tr>
