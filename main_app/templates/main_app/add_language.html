@@ -8,7 +8,7 @@
 
 <div class="container-fluid">
    
-    <div class="row">
+    <div style="overflow:hidden" class="row">
         <div class="col-md-4 col-lg-3" id="personal_info_container">
             {% include 'main_app/sidebar.html' %}
 
@@ -20,11 +20,15 @@
       
                 <div id="my_margin" style="margin: 0.5cm 1cm 1cm 1cm;" >
                     <div style="display:inline-block" >
-                        <a style="background-color: rgba(51, 0, 255, 0.091);color: rgb(20, 27, 255);margin-top: 10px;height: 35px;width: 35px;border: 1px rgba(74, 74, 255, 0.466) solid;" href="{% url 'main_app:index' %}" class="btn btn-sm rounded-circle"> 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-                            </svg>
-                        </a>
+                    
+                        <div class="btn btn-sm rounded-circle" style="background-color: rgba(0, 30, 255, 0.122);border: 1px rgb(92, 92, 255) solid;">
+                            <a style="font-size: 1rem;color: rgb(20, 27, 255);" href="{% url 'main_app:index' %}" > 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="28" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                                </svg>
+                            </a>
+                        </div>
+          
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <h5 style="margin-top: 15px;display:inline-table"> 
                             <b style="color:#00672A;margin-bottom: 0rem;"> Add Language </b>
