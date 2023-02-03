@@ -5,9 +5,9 @@ The quickest and easiest way to get your resume done for your next job applica
 
 ![Screenshot](8351a4c21c474486b9f13c18734e670f0ea6644e_2_2.gif)
 
-#### [QuickResume Live Link__>>](https://resumebuildersite.pythonanywhere.com)
+#### 🔗 [QuickResume Live Link >>](https://resumebuildersite.pythonanywhere.com)
 username: demo_email@gmail.com 
-password: demopassword2 
+password: demopassword
 
 ### Features
 
