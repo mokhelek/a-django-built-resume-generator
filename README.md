@@ -1,4 +1,4 @@
-![Screenshot]()
+![Screenshot](Social__3_-removebg-preview.png)
 
 The quickest and easiest way to get your resume done for your next job application .The platform will generate a professional PDF resume, users can choose from a variety of templates and with just a click of a button, they'll have their resume in pdf format ready.
 
