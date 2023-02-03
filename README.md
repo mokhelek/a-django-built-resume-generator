@@ -3,7 +3,7 @@ The quickest and easiest way to get your resume done for your next job applica
 
 ## Demo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uC3h0vbm22c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Screenshot]()
 
 
 ### Features
